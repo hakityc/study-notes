@@ -10,6 +10,6 @@ hero:
     alt: VitePress
   actions:
     - theme: brand
-      text: Go
-      link: /src/guide/index
+      text: 开始吧
+      link: /frontend/index
 ---
