@@ -9,4 +9,4 @@
 
 (配置好环境变量要重启设备)
 
-## [TODO] git配置模板配合ai工具(copilot或通义千问)整理commit内容
+## [🚧WIP] git配置模板配合ai工具(copilot或通义千问)整理commit内容
