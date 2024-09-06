@@ -5,6 +5,10 @@
   "scripts": {
     "docs:dev": "vitepress dev docs --port 8316",
     "docs:build": "vitepress build docs",
+    "docs:deploy": "vitepress build docs && zx scripts/deploy/deploy.mjs",
     "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "zx": "^8.1.5"
   }
 }

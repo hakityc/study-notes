@@ -197,7 +197,8 @@ export default defineConfig({
       },]
     },
   },
+   base: '/blog/'
   // vite: {
-  //   ...viteConfig,
+  //   build:{
   // },
 });
