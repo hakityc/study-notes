@@ -10,6 +10,6 @@ const target_dir = "root@139.196.10.107:/usr/local/nginx/docs"
 
 console.log(`🚀 正在部署...`)
 
-await $`scp -i ${rsa_path} -r ${source_dir} ${target_dir}`
+await $`scp -i ${rsa_path} -r ${source_dir}/* ${target_dir}`
 
 console.log(`🎉 部署成功！`)
