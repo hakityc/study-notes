@@ -1,7 +1,8 @@
 #!/usr/bin/env zx
 
 // rsa路径
-const rsa_path = "C:/Users/LX/.ssh/tyc_rsa"
+// const rsa_path = "C:/Users/LX/.ssh/tyc_rsa"
+const rsa_path="C:/Users/Administrator/.ssh/aliyun.rsa"
 // 源文件
 const source_dir = "build/*"
 // 目标目录
