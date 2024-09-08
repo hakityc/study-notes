@@ -5,9 +5,9 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Tam的博客",
   description: "",
-  head: [["link", { rel: "icon", href: "/public/favicon.ico" }]],
+  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
   themeConfig: {
-    logo: "/public/favicon.ico",
+    logo: "/favicon.ico",
     siteTitle: "Tam Blog",
     nav: [
       { text: "前端开发", link: "/TamDocs/frontend/index" },
