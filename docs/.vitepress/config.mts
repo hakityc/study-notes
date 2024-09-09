@@ -59,8 +59,8 @@ export default defineConfig({
               collapsed: true,
               items: [
                 {
-                  text: "开发实践",
-                  link: "/TamDocs/frontend/vue/开发实践",
+                  text: "设计模式",
+                  link: "/TamDocs/frontend/vue/设计模式",
                 },
                 {
                   text: "疑难杂症",
