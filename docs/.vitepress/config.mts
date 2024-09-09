@@ -34,16 +34,16 @@ export default defineConfig({
                 },
               ],
             },
-            {
-              text: "💄CSS",
-              collapsed: true,
-              items: [],
-            },
-            {
-              text: "😎JavaScript",
-              collapsed: true,
-              items: [],
-            },
+            // {
+            //   text: "💄CSS",
+            //   collapsed: true,
+            //   items: [],
+            // },
+            // {
+            //   text: "😎JavaScript",
+            //   collapsed: true,
+            //   items: [],
+            // },
             {
               text: "💙TypeScript",
               collapsed: true,
@@ -68,21 +68,21 @@ export default defineConfig({
                 },
               ],
             },
-            {
-              text: "👀React",
-              collapsed: true,
-              items: [],
-            },
-            {
-              text: "🌪Tailwind",
-              collapsed: true,
-            },
-            {
-              text: "⚡️Vite",
+            // {
+            //   text: "👀React",
+            //   collapsed: true,
+            //   items: [],
+            // },
+            // {
+            //   text: "🌪Tailwind",
+            //   collapsed: true,
+            // },
+            // {
+            //   text: "⚡️Vite",
 
-              collapsed: true,
-              items: [],
-            },
+            //   collapsed: true,
+            //   items: [],
+            // },
             {
               text: "🌏浏览器",
 
@@ -146,44 +146,44 @@ export default defineConfig({
             },
           ],
         },
-        {
-          text: "vscode",
-          collapsed: true,
-          items: [],
-        },
-        {
-          text: "nginx",
-          collapsed: true,
-          items: [],
-        },
+        // {
+        //   text: "vscode",
+        //   collapsed: true,
+        //   items: [],
+        // },
+        // {
+        //   text: "nginx",
+        //   collapsed: true,
+        //   items: [],
+        // },
       ],
-      other: [
-        {
-          text: "👟跨端",
-          collapsed: true,
-          items: [],
-        },
-        {
-          text: "📦组件库",
-          collapsed: true,
-          items: [],
-        },
-        {
-          text: "🏪包管理",
-          collapsed: true,
-          items: [],
-        },
-        {
-          text: "🌏浏览器",
-          collapsed: true,
-          items: [],
-        },
-        {
-          text: "🏗工程化",
-          collapsed: true,
-          items: [],
-        },
-      ],
+      // other: [
+      //   {
+      //     text: "👟跨端",
+      //     collapsed: true,
+      //     items: [],
+      //   },
+      //   {
+      //     text: "📦组件库",
+      //     collapsed: true,
+      //     items: [],
+      //   },
+      //   {
+      //     text: "🏪包管理",
+      //     collapsed: true,
+      //     items: [],
+      //   },
+      //   {
+      //     text: "🌏浏览器",
+      //     collapsed: true,
+      //     items: [],
+      //   },
+      //   {
+      //     text: "🏗工程化",
+      //     collapsed: true,
+      //     items: [],
+      //   },
+      // ],
     },
   },
   vite: {
