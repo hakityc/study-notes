@@ -13,10 +13,73 @@
 1. 获取组件的 dom 节点并转成图片
 2. 将图片复制到剪贴板
 
+## 代码实现
+  ```vue
+  //Card.vue
+  <script>
+  import {
+    useClipboardItems,
+    useElementSize
+  } from "@vueuse/core";
+  import { useElementToImage } from "@/hooks/useElement";
+
+  const { copy } = useClipboardItems()
+  const { elementToPng } = useElementToImage()
+  const dashboardItemRef = ref(null); // 父盒子的ref
+
+  const handleGetCardImage = async () => {
+  try {
+    if (!dashboardItemRef.value) return
+    const { width, height } = useElementSize(dashboardItemRef.value)
+    const image = await elementToPng(dashboardItemRef.value, {
+      width: width.value,
+      height: height.value,
+      filter: (node: HTMLElement) => {
+        const exclusionClasses = ['secret-element'];
+        return !exclusionClasses.some((className) => node.classList?.contains(className));
+      }
+    })
+    if (!image) return
+    await copy([new ClipboardItem({ ['image/png']: image })])
+    console.log(image)
+  } catch (error) {
+    console.error(error)
+  }
+}
+  </script>
+  <template>
+    <div ref="dashboardItemRef">
+      <div class="secret-element">不展示的节点</div>
+    </div>
+  </template>
+  ```
+
+
+  ```ts
+  // useElement.ts
+  import * as htmlToImage from 'html-to-image';
+  
+  export const useElementToImage = () => {
+    const elementToPng = async (element: HTMLElement, options?: { width?: number; height?: number, filter?: (domNode: HTMLElement) => boolean }) => {
+      try {
+        const imageBlob = await htmlToImage.toBlob(element, options)
+        if (!imageBlob) return;
+        return imageBlob
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    return {
+        elementToPng
+    }
+  }
+```
+
 ## 问题
 
 1. 获取组件的 dom 节点时会获取一些非必要的节点
-   ![alt text](getDomImage.jpg)
+   ![包含非必要节点的效果](./assets/getDomImage.jpg)
+   ![实际需要的效果](./assets/20240910-162133.jpg)
 2. 开始使用 useClipboard,但是只能复制文本，在富文本编辑器中粘贴时,粘贴的是纯文本（base64），不能直接粘贴图片
 3. 本地测试通过了,但在打包之后发到测试的时候就会报错,报错信息如下:
    > ReferenceError: ClipboardItem is not defined
