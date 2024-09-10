@@ -161,11 +161,20 @@ export default defineConfig({
         //   collapsed: true,
         //   items: [],
         // },
-        // {
-        //   text: "nginx",
-        //   collapsed: true,
-        //   items: [],
-        // },
+        {
+          text: "nginx",
+          collapsed: true,
+          items: [
+            {
+              text: "Nginx 常用命令",
+              link: "/TamDocs/devTools/nginx/index",
+            },
+            {
+              text: "vue-router历史模式下的nginx配置",
+              link: "/TamDocs/devTools/nginx/vue-router历史模式下的nginx配置",
+            },
+          ],
+        },
       ],
       // other: [
       //   {
