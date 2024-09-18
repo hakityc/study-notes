@@ -94,27 +94,37 @@ export default defineConfig({
                 },
               ],
             },
+            // {
+            //   text: "🛠工具库",
+            //   collapsed: true,
+            //   items: [
+            //     {
+            //       text: "marked",
+            //       link: "/TamDocs/frontend/tool/marked",
+            //     },
+            //   ],
+            // },
+            // {
+            //   text: "⌨️vscode",
+            //   collapsed: true,
+            //   items: [
+            //     {
+            //       text: "常用插件",
+            //       link: "/TamDocs/frontend/vscode/常用插件",
+            //     },
+            //     {
+            //       text: "代码调试",
+            //       link: "/TamDocs/frontend/vscode/代码调试",
+            //     },
+            //   ],
+            // },
             {
-              text: "🛠工具库",
+              text: "开发小结",
               collapsed: true,
               items: [
                 {
-                  text: "marked",
-                  link: "/TamDocs/frontend/tool/marked",
-                },
-              ],
-            },
-            {
-              text: "⌨️vscode",
-              collapsed: true,
-              items: [
-                {
-                  text: "常用插件",
-                  link: "/TamDocs/frontend/vscode/常用插件",
-                },
-                {
-                  text: "代码调试",
-                  link: "/TamDocs/frontend/vscode/代码调试",
+                  text: "组件转图片并复制到剪贴板",
+                  link: "/TamDocs/frontend/summary/组件转图片并复制到剪贴板",
                 },
               ],
             },
@@ -150,16 +160,30 @@ export default defineConfig({
             },
           ],
         },
-        // {
-        //   text: "vscode",
-        //   collapsed: true,
-        //   items: [],
-        // },
-        // {
-        //   text: "nginx",
-        //   collapsed: true,
-        //   items: [],
-        // },
+        {
+          text: "npm",
+          collapsed: true,
+          items: [
+            {
+              text: "npm 常用命令",
+              link: "/TamDocs/devTools/npm/index",
+            }
+          ],
+        },
+        {
+          text: "nginx",
+          collapsed: true,
+          items: [
+            {
+              text: "Nginx 常用命令",
+              link: "/TamDocs/devTools/nginx/index",
+            },
+            {
+              text: "vue-router历史模式下的nginx配置",
+              link: "/TamDocs/devTools/nginx/vue-router历史模式下的nginx配置",
+            },
+          ],
+        },
       ],
       // other: [
       //   {
@@ -192,5 +216,5 @@ export default defineConfig({
   },
   vite: {
   },
-  base:'/blog/',
+  base: '/blog/',
 });
