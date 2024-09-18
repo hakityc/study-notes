@@ -156,11 +156,16 @@ export default defineConfig({
             },
           ],
         },
-        // {
-        //   text: "vscode",
-        //   collapsed: true,
-        //   items: [],
-        // },
+        {
+          text: "npm",
+          collapsed: true,
+          items: [
+            {
+              text: "npm 常用命令",
+              link: "/TamDocs/devTools/npm/index",
+            }
+          ],
+        },
         {
           text: "nginx",
           collapsed: true,
