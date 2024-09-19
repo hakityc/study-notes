@@ -40,7 +40,10 @@ jobs:
         with:
           name: build-artifact
           path: ${{ env.BUILD_DIR }}
-
+          
+      - name: Check Build Dir
+        run: ls -a ${{ env.BUILD_DIR }} 
+          
   deploy:
     name: Deploy
     needs: build
