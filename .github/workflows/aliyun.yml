@@ -59,7 +59,7 @@ jobs:
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDzvc -i"
-          SOURCE: "./build-artifact"
+          SOURCE: ${{ env.BUILD_DIR }}
           REMOTE_HOST: ${{ env.DEPLOY_SERVER }}
           REMOTE_USER: ${{ env.DEPLOY_USER }}
           TARGET: ${{ env.DEPLOY_PATH }}
