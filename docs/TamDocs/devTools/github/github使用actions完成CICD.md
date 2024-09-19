@@ -1,6 +1,6 @@
 # github使用actions完成CI/CD
 
-## 配置
+## 一、配置
 ```yml
 name: Build and Deploy on Aliyun
 
@@ -79,3 +79,10 @@ jobs:
             ls -a
             echo $RSYNC_STDOUT
 ```
+
+## 二、疑难杂症
+
+### 1. 打包的时候没有按照配置中的路径打包（暂未解决）
+正常情况下，`Build Project`应该会把项目打包到`env.BUILD_DIR`,但是排查发现打包到了`xxx/project-name/project-name`
+
+**临时解决方案**：只能逐步调试`Deploy to Staging server`中的`SOURCE`来看具体路径是什么
