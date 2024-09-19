@@ -63,7 +63,7 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          ssh -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/dev/null ${DEPLOY_USER}@${DEPLOY_SERVER} "
+          ssh -o StrictHostKeyChecking=accept-new ${DEPLOY_USER}@${DEPLOY_SERVER} "
             cd ${DEPLOY_PATH}
             rm -rf *
             tar -xzf - -C .
