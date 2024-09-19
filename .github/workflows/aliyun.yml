@@ -60,13 +60,10 @@ jobs:
           eval $(ssh-agent -s)
           # 添加私钥到 ssh-agent
           echo "${{ secrets.SSH_PRIVATE_KEY }}" | ssh-add -
-          # 添加服务器公钥到 known_hosts
-          ssh-keyscan -t rsa ${DEPLOY_SERVER} >> ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts
 
       - name: Deploy to Server
         run: |
-          ssh -o StrictHostKeyChecking=no ${DEPLOY_USER}@${DEPLOY_SERVER} "
+          ssh -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/dev/null ${DEPLOY_USER}@${DEPLOY_SERVER} "
             cd ${DEPLOY_PATH}
             rm -rf *
             tar -xzf - -C .
