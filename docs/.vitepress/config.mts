@@ -136,6 +136,10 @@ export default defineConfig({
                   text: "前端开发规范",
                   link: "/TamDocs/frontend/other/前端开发规范",
                 },
+                {
+                  text: "前端性能优化",
+                  link: "/TamDocs/frontend/other/前端性能优化",
+                },
               ],
             },
           ],
