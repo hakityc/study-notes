@@ -42,7 +42,9 @@ jobs:
           path: ${{ env.BUILD_DIR }}
           
       - name: Check Build Dir
-        run: ls -a ${{ env.BUILD_DIR }} 
+        run: | 
+          pwd
+          ls -a ${{ env.BUILD_DIR }} 
           
   deploy:
     name: Deploy
