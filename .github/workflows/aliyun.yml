@@ -65,9 +65,7 @@ jobs:
           TARGET: ${{ env.DEPLOY_PATH }}
           #EXCLUDE: "/dist/, /node_modules/"#
           SCRIPT_BEFORE: |
-            whoami
-            ls -al
+            ls -a
           SCRIPT_AFTER: |
-            whoami
-            ls -al
+            ls -a
             echo $RSYNC_STDOUT
