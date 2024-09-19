@@ -184,6 +184,16 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: "github",
+          collapsed: true,
+          items: [
+            {
+              text: "github actions",
+              link: "/TamDocs/devTools/github/github使用actions完成CICD",
+            },
+          ],
+        },
       ],
       // other: [
       //   {
