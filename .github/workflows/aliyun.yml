@@ -11,7 +11,7 @@ on:
 
 env:
   NODE_VERSION: "18"
-  BUILD_DIR: docs/.vitepress/dist/
+  BUILD_DIR: ${{ vars.BUILD_DIR }}
   DEPLOY_USER: ${{ vars.USER }}
   DEPLOY_SERVER: ${{ secrets.SERVER }}
   DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
@@ -61,11 +61,25 @@ jobs:
           # 添加私钥到 ssh-agent
           echo "${{ secrets.SSH_PRIVATE_KEY }}" | ssh-add -
 
+      - name: List remote directory contents
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          host: ${{ env.DEPLOY_SERVER }}
+          username: ${{ env.DEPLOY_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          command: ls -a ${DEPLOY_PATH}
+
       - name: Deploy to Server
-        run: |
-          ssh -o StrictHostKeyChecking=accept-new ${DEPLOY_USER}@${DEPLOY_SERVER} "
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          host: ${{ env.DEPLOY_SERVER }}
+          username: ${{ env.DEPLOY_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          command: |
             cd ${DEPLOY_PATH}
             rm -rf *
             tar -xzf - -C .
             # 可能需要额外的命令来重启服务等
-          "
+          files: |
+            ${{ env.BUILD_DIR }}/*.tar.gz
+          remote_path: ${DEPLOY_PATH}
