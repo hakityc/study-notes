@@ -54,32 +54,20 @@ jobs:
         with:
           name: build-artifact
 
-      - name: Setup SSH Keys
-        run: |
-          # 启动 ssh-agent
-          eval $(ssh-agent -s)
-          # 添加私钥到 ssh-agent
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" | ssh-add -
-
-      - name: List remote directory contents
-        uses: garygrossgarten/github-action-ssh@release
+      - name: Deploy to Staging server
+        uses: easingthemes/ssh-deploy@main
         with:
-          host: ${{ env.DEPLOY_SERVER }}
-          username: ${{ env.DEPLOY_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          command: ls -a ${DEPLOY_PATH}
-
-      - name: Deploy to Server
-        uses: garygrossgarten/github-action-ssh@release
-        with:
-          host: ${{ env.DEPLOY_SERVER }}
-          username: ${{ env.DEPLOY_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          command: |
-            cd ${DEPLOY_PATH}
-            rm -rf *
-            tar -xzf - -C .
-            # 可能需要额外的命令来重启服务等
-          files: |
-            ${{ env.BUILD_DIR }}/*.tar.gz
-          remote_path: ${DEPLOY_PATH}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvc -i"
+          SOURCE: ${{ env.BUILD_DIR }}
+          REMOTE_HOST: ${{ env.DEPLOY_SERVER }}
+          REMOTE_USER: ${{ env.DEPLOY_USER }}
+          TARGET: ${{ env.DEPLOY_PATH }}
+          #EXCLUDE: "/dist/, /node_modules/"#
+          SCRIPT_BEFORE: |
+            whoami
+            ls -al
+          SCRIPT_AFTER: |
+            whoami
+            ls -al
+            echo $RSYNC_STDOUT
