@@ -10,11 +10,11 @@ on:
   #     - main
 
 env:
-  NODE_VERSION: '20'
+  NODE_VERSION: "20"
   BUILD_DIR: docs/.vitepress/dist/
-  DEPLOY_USER: ${{ secrets.USER }}
+  DEPLOY_USER: ${{ vars.USER }}
   DEPLOY_SERVER: ${{ secrets.SERVER }}
-  DEPLOY_PATH: ${{ variables.DEPLOY_PATH }}
+  DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
 
 jobs:
   build:
