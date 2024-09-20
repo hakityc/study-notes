@@ -8,13 +8,34 @@ type SidebarItem = {
   collapsed?: boolean;
 };
 
-export const autoGenerateStructure = (options: {
+type GenerateSidebarOptions = {
   basePath?: string;
   filterIndexMd?: boolean; // 控制是否过滤 index.md
   filterEmptyDirs?: boolean; // 控制是否过滤空文件夹
   excludePattern?: string[]; // 用于匹配文件名的字符串数组
-}) => {
-  const { basePath, filterIndexMd, filterEmptyDirs, excludePattern } = options;
+  customOrder?: string[]; // 自定义排序的文件夹名
+};
+
+type GenerateNavOptions = {
+  basePath?: string;
+  customOrder?: string[]; // 自定义排序的文件夹名
+};
+
+// 根据自定义排序对文件夹进行排序
+const sortByCustomOrder = (items: string[], customOrder?: string[]): string[] => {
+  if (!customOrder || customOrder.length === 0) {
+    return items.sort((a, b) => a.localeCompare(b)); // 默认字母排序
+  }
+
+  // 将自定义排序的文件夹放在前面，剩下的按字母顺序排在后面
+  const inOrderArray = items.filter(item => customOrder.includes(item));
+  const notInOrderArray = items.filter(item => !customOrder.includes(item)).sort((a, b) => a.localeCompare(b));
+  return [...inOrderArray.sort((a, b) => customOrder.indexOf(a) - customOrder.indexOf(b)), ...notInOrderArray];
+};
+
+// 生成 sidebar 配置
+export const generateSidebar = (options: GenerateSidebarOptions): Record<string, Array<SidebarItem>> => {
+  const { basePath, filterIndexMd, filterEmptyDirs, excludePattern, customOrder } = options;
 
   if (!basePath) {
     throw new Error('basePath is required');
@@ -25,12 +46,14 @@ export const autoGenerateStructure = (options: {
   // 遍历子目录并生成对应的 sidebar 结构
   const getSidebar = (dir: string, relativePath = ''): Array<SidebarItem> => {
     const sidebar: Array<SidebarItem> = [];
-    const files = fs.readdirSync(dir);
+    let files = fs.readdirSync(dir);
 
     // 如果文件夹为空且需要过滤空文件夹，则返回空数组
     if (filterEmptyDirs && files.length === 0) {
       return [];
     }
+
+    files = sortByCustomOrder(files, customOrder); // 排序文件或目录
 
     files.forEach((file) => {
       const fullPath = path.join(dir, file);
@@ -69,10 +92,12 @@ export const autoGenerateStructure = (options: {
     return sidebar;
   };
 
-  // 读取 TamDocs 目录下的子目录（如 frontend 和 devtool）
-  const directories = fs.readdirSync(docsPath).filter((dir) => {
+  // 读取 TamDocs 目录下的子目录
+  let directories = fs.readdirSync(docsPath).filter((dir) => {
     return fs.statSync(path.join(docsPath, dir)).isDirectory();
   });
+
+  directories = sortByCustomOrder(directories, customOrder); // 对顶级目录进行排序
 
   // 根据子目录生成每个子目录的 sidebar 配置
   const sidebarConfig: Record<string, Array<SidebarItem>> = {};
@@ -86,13 +111,30 @@ export const autoGenerateStructure = (options: {
     }
   });
 
+  return sidebarConfig;
+};
+
+// 生成 nav 配置
+export const generateNav = (options: GenerateNavOptions): Array<{ text: string; link: string }> => {
+  const { basePath, customOrder } = options;
+
+  if (!basePath) {
+    throw new Error('basePath is required');
+  }
+
+  const docsPath = path.resolve(__dirname, `../../${basePath}`);
+
+  // 读取 TamDocs 目录下的子目录
+  let directories = fs.readdirSync(docsPath).filter((dir) => {
+    return fs.statSync(path.join(docsPath, dir)).isDirectory();
+  });
+
+  directories = sortByCustomOrder(directories, customOrder); // 对顶级目录进行排序
+
   const navConfig: Array<{ text: string; link: string }> = directories.map((dir) => ({
     text: dir,
     link: `/TamDocs/${dir}/`
   }));
 
-  return {
-    nav: navConfig,
-    sidebar: sidebarConfig,
-  };
+  return navConfig;
 };
