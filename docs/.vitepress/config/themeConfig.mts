@@ -13,6 +13,9 @@ export const themeConfig = {
         filterIndexMd: true,
         filterEmptyDirs: true,
         excludePattern: ['WIP'],
-        customOrder: ['😋HTML', '👽Vue']
+        customOrder: new Map([
+            ['前端开发', ['😋HTML', '👽Vue']],
+            ['开发工具', ['npm','nvm']],
+        ])
     }),
 }
