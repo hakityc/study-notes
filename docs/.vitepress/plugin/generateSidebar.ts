@@ -86,5 +86,13 @@ export const autoGenerateStructure = (options: {
     }
   });
 
-  return sidebarConfig;
+  const navConfig: Array<{ text: string; link: string }> = directories.map((dir) => ({
+    text: dir,
+    link: `/TamDocs/${dir}/`
+  }));
+
+  return {
+    nav: navConfig,
+    sidebar: sidebarConfig,
+  };
 };

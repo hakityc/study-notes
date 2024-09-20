@@ -10,7 +10,7 @@ export default defineConfig({
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
   themeConfig: {
     ...themeConfig,
-    sidebar: autoGenerateStructure({
+    ...autoGenerateStructure({
       basePath: 'TamDocs/',
       filterIndexMd: true,
       filterEmptyDirs: true,
