@@ -10,7 +10,7 @@ export const themeConfig = {
         basePath: 'TamDocs/',
         filterIndexMd: true,
         filterEmptyDirs: true,
-        excludePattern: ['WIP'],
+        excludePattern: [],
         customOrder: new Map([
             ['前端开发', ['😋HTML', '👽Vue']],
             ['开发工具', ['npm', 'nvm']],
