@@ -14,13 +14,13 @@ type GenerateSidebarOptions = {
   filterEmptyDirs?: boolean; // 控制是否过滤空文件夹
   excludePattern?: string[]; // 用于匹配文件名的字符串数组
   // customOrder?: string[]; // 自定义排序的文件夹名
-  customOrder?: Map<string,string[]>; // 自定义排序的文件夹名
+  customOrder?: Map<string, string[]>; // 自定义排序的文件夹名
 };
 
 type GenerateNavOptions = {
   basePath?: string;
   customOrder?: string[]; // 自定义排序的文件夹名
-  
+
 };
 
 // 根据自定义排序对文件夹进行排序
@@ -220,7 +220,8 @@ export const generateNav = (options: GenerateNavOptions): Array<{ text: string; 
 
   const navConfig: Array<{ text: string; link: string }> = directories.map((dir) => ({
     text: dir,
-    link: `/TamDocs/${dir}/`
+    link: `/TamDocs/${dir}/`,
+    collapsed: true
   }));
 
   return navConfig;
