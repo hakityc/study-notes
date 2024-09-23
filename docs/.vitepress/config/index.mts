@@ -7,7 +7,21 @@ export default defineConfig({
   title: "Tam的博客",
   description: "",
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
-  themeConfig,
+  themeConfig: {
+    logo: "/favicon.ico",
+    siteTitle: "Tam Blog",
+    search: {
+      provider: 'local'
+    },
+    lastUpdated: {
+      text: '最后更新时间',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
+    },
+    ...themeConfig
+  },
   vite: {
     server: {
       watch: {
