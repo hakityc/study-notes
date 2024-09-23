@@ -1,6 +1,7 @@
 // .vitepress/config.js
 import { defineConfig } from "vitepress";
 import { themeConfig } from "./themeConfig.mts";
+import UnoCSS from 'unocss/vite'
 // import viteConfig from "../../vite.config";
 
 export default defineConfig({
@@ -23,6 +24,9 @@ export default defineConfig({
     ...themeConfig
   },
   vite: {
+    plugins: [
+      UnoCSS()
+    ],
     server: {
       watch: {
 
