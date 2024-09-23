@@ -88,3 +88,7 @@ jobs:
 正常情况下，`Build Project`应该会把项目打包到`env.BUILD_DIR`,但是排查发现打包到了`xxx/project-name/project-name`
 
 **临时解决方案**：只能逐步调试`Deploy to Staging server`中的`SOURCE`来看具体路径是什么
+
+### 2. 新增文件或修改文件名后，没有触发vite的热更新（暂未解决）
+
+修改文件后，没有触发vite的热更新，需要手动重启服务
