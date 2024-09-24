@@ -1,8 +1,8 @@
-# github使用actions完成CI/CD
+# GitHub 使用 Actions 完成 CI/CD
 
 ## 一、配置
 
-```yml
+```yaml
 name: Build and Deploy on Aliyun
 
 on:
@@ -45,12 +45,12 @@ jobs:
         with:
           name: build-artifact
           path: ${{ env.BUILD_DIR }}
-          
+
       - name: Check Build Dir
         run: | 
           pwd
-          ls -a ${{ env.BUILD_DIR }} 
-          
+          ls -a ${{ env.BUILD_DIR }}
+
   deploy:
     name: Deploy
     needs: build
@@ -64,7 +64,7 @@ jobs:
         with:
           name: build-artifact
 
-      - name: Deploy to Staging server
+      - name: Deploy to Staging Server
         uses: easingthemes/ssh-deploy@main
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -73,7 +73,7 @@ jobs:
           REMOTE_HOST: ${{ env.DEPLOY_SERVER }}
           REMOTE_USER: ${{ env.DEPLOY_USER }}
           TARGET: ${{ env.DEPLOY_PATH }}
-          #EXCLUDE: "/dist/, /node_modules/"#
+          # EXCLUDE: "/dist/, /node_modules/"
           SCRIPT_BEFORE: |
             ls -a
           SCRIPT_AFTER: |
@@ -85,10 +85,34 @@ jobs:
 
 ### 1. 打包的时候没有按照配置中的路径打包（暂未解决）
 
-正常情况下，`Build Project`应该会把项目打包到`env.BUILD_DIR`,但是排查发现打包到了`xxx/project-name/project-name`
+**问题描述**：
 
-**临时解决方案**：只能逐步调试`Deploy to Staging server`中的`SOURCE`来看具体路径是什么
+- 正常情况下，`Build Project` 应该会把项目打包到 `env.BUILD_DIR`，但排查发现打包到了 `xxx/project-name/project-name`。
 
-### 2. 新增文件或修改文件名后，没有触发vite的热更新（暂未解决）
+**临时解决方案**：
 
-修改文件后，没有触发vite的热更新，需要手动重启服务
+- 逐步调试 `Deploy to Staging Server` 中的 `SOURCE`，查看具体路径是什么。
+
+### 2. 新增文件或修改文件名后，没有触发 Vite 的热更新（暂未解决）
+
+**问题描述**：
+
+- 修改文件后，没有触发 Vite 的热更新，需要手动重启服务。
+
+<!-- **临时解决方案**：
+
+- 手动重启服务。
+- 检查 Vite 配置文件，确保 `hot: true` 已经启用。
+- 确认文件系统监控是否正常工作，可以尝试增加 `watchOptions` 配置，例如：
+
+```javascript
+// vite.config.js
+export default defineConfig({
+  server: {
+    watch: {
+      usePolling: true,
+      interval: 1000, // 检查文件变化的间隔时间（毫秒）
+    },
+  },
+});
+``` -->
