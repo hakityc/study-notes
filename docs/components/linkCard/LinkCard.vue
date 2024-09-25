@@ -26,7 +26,7 @@ const handleClick = () => {
       </div>
     </div>
     <div class="h-10 w-full flex">
-      <span class="text-3 text-#3c3c43 text-ellipsis overflow-hidden">{{ props.card.desc }}</span>
+      <span class="text-3 text-#3c3c43 text-ellipsis w-full overflow-hidden">{{ props.card.desc }}</span>
     </div>
   </div>
 </template>

@@ -2,7 +2,7 @@
 import LinkCard from "./LinkCard.vue";
 
 const props = defineProps<{
-  list: {
+  cards: {
     title: string;
     desc: string;
     link: string;
@@ -13,7 +13,7 @@ const props = defineProps<{
 </script>
 <template>
   <div class="wh-full grid grid-cols-3 gap-4">
-    <template v-for="card in list">
+    <template v-for="card in cards">
       <LinkCard :card></LinkCard>
     </template>
   </div>

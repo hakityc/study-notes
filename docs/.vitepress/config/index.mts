@@ -2,6 +2,7 @@
 import { defineConfig } from "vitepress";
 import { themeConfig } from "./themeConfig.mts";
 import UnoCSS from 'unocss/vite'
+import { resolve } from "path";
 // import viteConfig from "../../vite.config";
 
 export default defineConfig({
@@ -24,6 +25,11 @@ export default defineConfig({
     ...themeConfig
   },
   vite: {
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, "../../../docs"),
+      }
+    },
     plugins: [
       UnoCSS()
     ],
