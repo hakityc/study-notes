@@ -1,17 +1,16 @@
 <script lang="ts" setup>
 import { computed, onMounted, ref } from "vue";
 import LinkCardList from "./LinkCardList.vue";
-import { type Tree } from "@/types/LinkCard.d.ts";
+import type { Tree } from "../../types/LinkCard.d.ts";
 
 const props = defineProps<{
   tree: Tree;
   depth: number;
 }>();
 
-const depth = computed(()=>{
+const depth = computed(() => {
   return props.depth + 1;
-})
-
+});
 </script>
 
 <template>
@@ -21,7 +20,7 @@ const depth = computed(()=>{
         <component :is="`h${depth}`">
           {{ node.title }}
         </component>
-        <LinkCardList :cards="node.cards" />
+        <LinkCardList :cards="node.cards || []" />
         <LinkCardListTree v-if="node.children" :tree="node.children" :depth="depth" />
       </div>
     </template>

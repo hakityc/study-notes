@@ -1,20 +1,15 @@
 <script lang="ts" setup>
-import LinkCard from "./LinkCard.vue";
+import LinkCardItem from "./LinkCard.vue";
+import type { LinkCard } from '../../types/LinkCard.d.ts'
 
 const props = defineProps<{
-  cards: {
-    title: string;
-    desc: string;
-    link: string;
-    icon: string;
-    tips: string;
-  }[];
+  cards: LinkCard[];
 }>();
 </script>
 <template>
   <div class="wh-full grid grid-cols-3 gap-4">
     <template v-for="card in cards">
-      <LinkCard :card></LinkCard>
+      <LinkCardItem :card></LinkCardItem>
     </template>
   </div>
 </template>

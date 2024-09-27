@@ -12,7 +12,7 @@ export const themeConfig = {
         filterEmptyDirs: true,
         excludePattern: [],
         customOrder: new Map([
-            ['前端开发', ['😋HTML', '👽Vue']],
+            ['前端开发', ['😋HTML', '😎JavaScript', '👽Vue']],
             ['开发工具', ['npm', 'nvm']],
         ])
     }),
