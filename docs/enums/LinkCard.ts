@@ -3,5 +3,6 @@ export enum LinkCardTag {
     REACT = "React",
     MOBILE = "Mobile",
     WEB = "Web",
+    TAILWIND = "Tailwind",
     OTHER = "Other"
 }

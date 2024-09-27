@@ -5,6 +5,10 @@ export type LinkCard = {
     link: string;
     icon?: string;
     tags?: LinkCardTag[];
+    style?: {
+        color?: string,
+        backgroundColor?: string
+    }
 }
 
 
