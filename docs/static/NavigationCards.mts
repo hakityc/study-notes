@@ -3,18 +3,75 @@ import { LinkCardTag } from '../enums/LinkCard.ts'
 
 const tree: Tree = [
     {
-      title:'HTML、CSS',
-      cards:[
-        {
-            title:'Css选择器学习小游戏',
-            desc: "基于Ant Design和Vue的企业级UI组件",
-            link: "https://www.antdv.com/docs/vue/introduce-cn",
-            style: {
-                backgroundColor: "#cf8e27",
-                color: "#fff"
+        title: "在线工具",
+        cards: [
+            {
+                title: 'CSS Diner',
+                desc: "Where we feast on CSS Selectors!(Css选择器学习小游戏)",
+                link: "https://flukeout.github.io",
+                tags: [LinkCardTag.CSS],
+                style: {
+                    cardStyle: {
+                        backgroundColor: "#cf8e27",
+                        color: "#fff"
+                    },
+                    descStyle: {
+                        color: "#fff"
+                    }
+                }
+            },
+            {
+                title: 'CSS Triggers',
+                desc: "查看CSS属性对渲染性能的影响",
+                link: "https://csstriggers.com/",
+                tags: [LinkCardTag.CSS],
+                style: {
+                    cardStyle: {
+                        backgroundColor: "#e7f5fe",
+                    }
+                }
+            },
+            {
+                title: 'alwane',
+                desc: '在线网页主体颜色提取工具',
+                link: 'https://alwane.io/',
+                style: {
+                    cardStyle: {
+                        backgroundColor: "#efeffc",
+                    }
+                }
+            },
+            {
+                title: 'CSS Grid Generator',
+                desc: '在线生成CSS Grid布局代码',
+                link: 'https://cssgrid-generator.netlify.app/',
+                tags: [LinkCardTag.CSS],
+                style: {
+                    cardStyle: {
+                        backgroundColor: '#211f2f',
+                        color: '#fff'
+                    },
+                    descStyle: {
+                        color: '#fff'
+                    }
+                }
+            },
+            {
+                title: 'Vue 3 Playground',
+                desc: 'Vue 3在线代码编辑器',
+                link: 'https://cn-vuejs-challenges.netlify.app/',
+                tags: [LinkCardTag.VUE],
+                style: {
+                    cardStyle: {
+                        backgroundColor: '#4acf93',
+                        color: '#fff',
+                    },
+                    descStyle: {
+                        color: '#fff'
+                    }
+                }
             }
-        }
-      ]
+        ]
     },
     {
         title: "组件库",
@@ -26,7 +83,12 @@ const tree: Tree = [
                 link: "https://www.antdv.com/docs/vue/introduce-cn",
                 tags: [LinkCardTag.VUE],
                 style: {
-                    color: "#1890ff"
+                    cardStyle: {
+                        color: "#1890ff"
+                    },
+                    descStyle: {
+
+                    }
                 }
             },
             {
@@ -36,7 +98,12 @@ const tree: Tree = [
                 link: "https://element-plus.org/zh-CN/",
                 tags: [LinkCardTag.VUE],
                 style: {
-                    color: "#409eff"
+                    cardStyle: {
+                        color: "#409eff"
+                    },
+                    descStyle: {
+
+                    }
                 }
             },
             {
@@ -46,7 +113,9 @@ const tree: Tree = [
                 link: "https://ant-design.antgroup.com/index-cn",
                 tags: [LinkCardTag.REACT],
                 style: {
-                    color: "#1890ff"
+                    cardStyle: {
+                        color: "#1890ff"
+                    },
                 }
             },
             {
@@ -54,8 +123,11 @@ const tree: Tree = [
                 icon: "https://fastly.jsdelivr.net/npm/@vant/assets/logo.png",
                 link: "https://vant-ui.github.io/vant/#/zh-CN",
                 tags: [LinkCardTag.VUE, LinkCardTag.MOBILE],
+                desc: "轻量、可靠的移动端 Vue 组件库",
                 style: {
-                    color: "#07c160"
+                    cardStyle: {
+                        color: "#07c160"
+                    },
                 }
             },
             {
@@ -65,7 +137,9 @@ const tree: Tree = [
                 desc: "腾讯跳动组件库",
                 tags: [LinkCardTag.VUE, LinkCardTag.REACT, LinkCardTag.MOBILE],
                 style: {
-                    color: "#0078d4"
+                    cardStyle: {
+                        color: "#0078d4"
+                    },
                 }
             },
             {
@@ -75,7 +149,9 @@ const tree: Tree = [
                 link: "https://arco.design/",
                 tags: [LinkCardTag.VUE, LinkCardTag.REACT],
                 style: {
-                    color: "#1e90ff"
+                    cardStyle: {
+                        color: "#1e90ff"
+                    },
                 }
             },
             {
@@ -85,9 +161,37 @@ const tree: Tree = [
                 desc: "The most popular component libraryfor Tailwind CSS",
                 tags: [LinkCardTag.TAILWIND],
                 style: {
-                    color: "#f9a8d4"
+                    cardStyle: {
+                        color: "#f9a8d4"
+                    },
                 }
             },
+        ]
+    },
+    {
+        title: 'UI资源',
+        cards: [
+            {
+                title: 'uiverse',
+                desc: '最大的开源UI库',
+                link: 'https://uiverse.io/',
+                style: {
+                    cardStyle: {
+                        backgroundColor: '#001f3f',
+                        color: '#fff'
+                    }
+                }
+            },
+            {
+                title: 'CSS loader',
+                desc: 'CSS加载动画示例',
+                link: 'https://css-loaders.com/',
+                style: {
+                    cardStyle: {
+                        backgroundColor: '#e4e7ef',
+                    }
+                }
+            }
         ]
     }
 ]

@@ -6,8 +6,12 @@ export type LinkCard = {
     icon?: string;
     tags?: LinkCardTag[];
     style?: {
-        color?: string,
-        backgroundColor?: string
+        cardStyle?: {
+            backgroundColor?: string;
+            color?: string;
+        };
+        descStyle?: {
+        };
     }
 }
 

@@ -45,7 +45,7 @@ const getTagStyle = (tag: LinkCardTag) => {
   <div
     class="flex flex-col h-24 w-50 bg-#f6f6f7 rounded-lg px-2 gap-1 cursor-pointer translate duration-0.5s border-0 group box-content border-1 shadow-md hover:border-#d9d9d9 hover:shadow-lg"
     @click="handleClick"
-    :style="props.card.style"
+    :style="props.card.style?.cardStyle"
   >
     <!-- <div class="link-card-header"></div> -->
     <div class="flex justify-start items-center gap-4 flex-1 h-0">
@@ -62,7 +62,7 @@ const getTagStyle = (tag: LinkCardTag) => {
       </div>
     </div>
     <div v-if="props.card.desc" class="h-6 w-full flex" :class="props.card.icon ? 'px-2' : ''">
-      <span class="text-3 text-#3c3c43 text-ellipsis w-full overflow-hidden text-nowrap" :style="props.card.style">{{ props.card.desc }}</span>
+      <span class="text-3 text-#86909c text-ellipsis w-full overflow-hidden text-nowrap" :style="props.card.style?.descStyle">{{ props.card.desc }}</span>
     </div>
   </div>
 </template>
