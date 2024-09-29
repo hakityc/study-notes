@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 开始吧
-      link: /TamDocs/前端开发/index
+      link: /TamDocs/导航/index
 
 # features:
 #   - icon: 📝

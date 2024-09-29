@@ -17,7 +17,7 @@ const depth = computed(() => {
   <div class="flex flex-col wh-full">
     <template v-for="node in props.tree" :key="node.title">
       <div class="mb-4">
-        <component :is="`h${depth}`"  :id="node.title" tabindex="-1">
+        <component :is="`h${depth}`" :id="node.title" tabindex="-1">
           {{ node.title }}
         </component>
         <LinkCardList :cards="node.cards || []" />

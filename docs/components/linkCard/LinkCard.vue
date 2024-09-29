@@ -49,8 +49,8 @@ const getTagStyle = (tag: LinkCardTag) => {
   >
     <!-- <div class="link-card-header"></div> -->
     <div class="flex justify-start items-center gap-4 flex-1 h-0">
-      <img v-if="props.card.icon" class="w-10 h-10 rounded-50% overflow-hidden group-hover:filter-30 shrink-0" :src="props.card.icon" :alt="props.card.title" />
-      <div class="flex flex-col items-start w-0 flex-1 overflow-hidden">
+      <img v-if="props.card.icon" class="w-10 h-10 overflow-hidden group-hover:filter-30 shrink-0" :src="props.card.icon" :alt="props.card.title" />
+      <div class="flex flex-col justify-start items-start w-0 flex-1 overflow-hidden">
         <span class="font-700">{{ props.card.title }}</span>
         <div class="w-full flex gap-1">
           <template v-for="tag in tagList?.slice(0, 2)">

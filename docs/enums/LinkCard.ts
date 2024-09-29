@@ -7,5 +7,8 @@ export enum LinkCardTag {
     CSS = "CSS",
     HTML = "HTML",
     JAVASCRIPT = "JavaScript",
+    TYPESCRIPT = "TypeScript",
+    VITE = "Vite",
+    NLP = "NLP",
     OTHER = "Other"
 }
