@@ -58,7 +58,6 @@ const tree: Tree = [
                 title: 'CDNJS',
                 desc: '前端库CDN',
                 link: 'https://cdnjs.com/',
-                icon: 'https://cdnjs.com/_/f7a2ebfb819c118086546e481876aef6.svg'
             },
             {
                 title: 'Boot CDN',
@@ -436,7 +435,6 @@ const tree: Tree = [
             },
             {
                 title: 'VARLET',
-                icon: 'https://varlet-varletjs.vercel.app/varlet_icon.png',
                 link: 'https://varlet-varletjs.vercel.app/#/zh-CN/index',
                 desc: 'Varlet UI 是一个基于 Vue3 开发的 Material Design 组件库',
             }, {
@@ -526,7 +524,7 @@ const tree: Tree = [
                 title: 'Hugging Face',
                 desc: 'Transformers for Natural Language Processing',
                 link: 'https://huggingface.co/',
-                icon: 'https://huggingface.co/favicon.ico',
+                // icon: 'https://huggingface.co/favicon.ico',
                 tags: [LinkCardTag.NLP]
             }
         ]
