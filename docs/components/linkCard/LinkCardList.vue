@@ -7,7 +7,7 @@ const props = defineProps<{
 }>();
 </script>
 <template>
-  <div class="wh-full grid grid-cols-3 gap-4">
+  <div class="wh-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 3xl:grid-cols-4 gap-4">
     <template v-for="card in cards">
       <LinkCardItem :card></LinkCardItem>
     </template>
