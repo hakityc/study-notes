@@ -43,7 +43,7 @@ const getTagStyle = (tag: LinkCardTag) => {
 </script>
 <template>
   <div
-    class="flex flex-col h-24 w-50 bg-#f6f6f7 rounded-lg px-2 gap-1 cursor-pointer translate duration-0.5s border-0 group box-content border-1 shadow-md hover:border-#d9d9d9 hover:shadow-lg"
+    class="flex flex-col h-24 bg-#f6f6f7 rounded-lg px-2 gap-1 cursor-pointer translate duration-0.5s border-0 group box-content border-1 shadow-md hover:border-#d9d9d9 hover:shadow-lg"
     @click="handleClick"
     :style="props.card.style?.cardStyle"
   >
