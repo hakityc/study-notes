@@ -6,6 +6,18 @@ const tree: Tree = [
         title: "在线工具",
         cards: [
             {
+                title:'quicktype',
+                link:'https://app.quicktype.io/',
+                desc:'将JSON转换为代码',
+                icon:'https://app.quicktype.io/favicon.ico'
+            },
+            {
+                title:'Can I use',
+                desc:'查看CSS属性的兼容性',
+                link:'https://caniuse.com/',
+                icon:'https://caniuse.com/img/favicon-128.png'
+            },
+            {
                 title: 'CSS Triggers',
                 desc: "查看CSS属性对渲染性能的影响",
                 link: "https://csstriggers.com/",
@@ -439,10 +451,17 @@ const tree: Tree = [
                 icon: 'https://varlet-varletjs.vercel.app/varlet_icon.png',
                 link: 'https://varlet-varletjs.vercel.app/#/zh-CN/index',
                 desc: 'Varlet UI 是一个基于 Vue3 开发的 Material Design 组件库',
-            }, {
+            }, 
+            {
                 title: 'iView',
                 link: 'https://www.iviewui.com/',
                 desc: '基于 Vue.js 3 的企业级 UI 组件库和中后台系统解决方案',
+            },
+            {
+                title:'Magic UI',
+                desc:'UI library for Design Engineers',
+                link:'https://magicui.design/',
+                icon:'https://magicui.design/favicon.ico'
             }
         ]
     },
