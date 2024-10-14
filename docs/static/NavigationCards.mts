@@ -296,7 +296,7 @@ const tree: Tree = [
                 title: 'Uno CSS',
                 icon: 'https://unocss-cn.pages.dev/logo.svg',
                 desc: '即时按需的原子CSS引擎',
-                link: 'https://unocss.com/',
+                link: 'https://unocss.dev/',
                 tags: [LinkCardTag.VUE],
             },
             {
@@ -450,11 +450,6 @@ const tree: Tree = [
                 link: 'https://varlet-varletjs.vercel.app/#/zh-CN/index',
                 desc: 'Varlet UI 是一个基于 Vue3 开发的 Material Design 组件库',
             }, 
-            {
-                title: 'iView',
-                link: 'https://www.iviewui.com/',
-                desc: '基于 Vue.js 3 的企业级 UI 组件库和中后台系统解决方案',
-            },
             {
                 title:'Magic UI',
                 desc:'UI library for Design Engineers',
