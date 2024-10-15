@@ -6,16 +6,16 @@ const tree: Tree = [
         title: "在线工具",
         cards: [
             {
-                title:'quicktype',
-                link:'https://app.quicktype.io/',
-                desc:'将JSON转换为代码',
-                icon:'https://app.quicktype.io/favicon.ico'
+                title: 'quicktype',
+                link: 'https://app.quicktype.io/',
+                desc: '将JSON转换为代码',
+                icon: 'https://app.quicktype.io/favicon.ico'
             },
             {
-                title:'Can I use',
-                desc:'查看CSS属性的兼容性',
-                link:'https://caniuse.com/',
-                icon:'https://caniuse.com/img/favicon-128.png'
+                title: 'Can I use',
+                desc: '查看CSS属性的兼容性',
+                link: 'https://caniuse.com/',
+                icon: 'https://caniuse.com/img/favicon-128.png'
             },
             {
                 title: 'CSS Triggers',
@@ -86,6 +86,11 @@ const tree: Tree = [
                 desc: '生成徽章',
                 link: 'https://shields.io/',
                 icon: 'https://shields.io/img/logo.png'
+            },
+            {
+                title:'在线获取网站图标',
+                desc:'在线获取网站图标',
+                link:'https://uutool.cn/web-icon/',
             }
         ],
         children: [
@@ -144,6 +149,23 @@ const tree: Tree = [
                         tags: [LinkCardTag.REACT],
                     },
 
+                ]
+            },
+            {
+                title: 'AI工具',
+                cards: [
+                    {
+                        title: 'blot',
+                        link: 'https://bolt.new/',
+                        desc: 'Prompt, run, edit, and deploy full-stack web apps.',
+                        icon: 'https://bolt.new/favicon.svg'
+                    },
+                    {
+                        title: 'v0',
+                        link: 'https://v0.dev/',
+                        desc: 'Chat with v0. Generate UI with simple text prompts. Copy, paste, ship.',
+                        icon: 'https://v0.dev/assets/icon.svg'
+                    }
                 ]
             },
             {
@@ -449,12 +471,12 @@ const tree: Tree = [
                 title: 'VARLET',
                 link: 'https://varlet-varletjs.vercel.app/#/zh-CN/index',
                 desc: 'Varlet UI 是一个基于 Vue3 开发的 Material Design 组件库',
-            }, 
+            },
             {
-                title:'Magic UI',
-                desc:'UI library for Design Engineers',
-                link:'https://magicui.design/',
-                icon:'https://magicui.design/favicon.ico'
+                title: 'Magic UI',
+                desc: 'UI library for Design Engineers',
+                link: 'https://magicui.design/',
+                icon: 'https://magicui.design/favicon.ico'
             }
         ]
     },
@@ -473,16 +495,16 @@ const tree: Tree = [
                 }
             },
             {
-                title:'Rauno',
-                desc:'交互设计参考',
-                link:'https://rauno.me/',
+                title: 'Rauno',
+                desc: '交互设计参考',
+                link: 'https://rauno.me/',
 
             },
             {
-                title:'Checklist Design',
-                desc:'最佳设计实践集合',
-                link:'https://www.checklist.design/',
-                icon:'https://cdn.prod.website-files.com/5ba4b3c973b5d218459f7e6f/5de1c13fd414340c34dbb662_checklist-logo.svg'
+                title: 'Checklist Design',
+                desc: '最佳设计实践集合',
+                link: 'https://www.checklist.design/',
+                icon: 'https://cdn.prod.website-files.com/5ba4b3c973b5d218459f7e6f/5de1c13fd414340c34dbb662_checklist-logo.svg'
             },
             {
                 title: 'CSS loader',
