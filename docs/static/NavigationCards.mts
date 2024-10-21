@@ -232,6 +232,11 @@ const tree: Tree = [
                         desc: '轻量级的模糊搜索库',
                         link: 'https://fusejs.io/',
                         icon: 'https://www.fusejs.io/assets/img/logo.png'
+                    },
+                    {
+                        title:'translate.js',
+                        desc:'翻译库',
+                        link:'https://translate.zvo.cn/index.html',
                     }
                 ]
             },
