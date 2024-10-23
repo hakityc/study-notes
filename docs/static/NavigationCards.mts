@@ -479,9 +479,11 @@ const tree: Tree = [
                 }
             },
             {
-                title: 'VARLET',
-                link: 'https://varlet-varletjs.vercel.app/#/zh-CN/index',
-                desc: 'Varlet UI 是一个基于 Vue3 开发的 Material Design 组件库',
+                title: 'Shadcn UI',
+                link: 'https://ui.shadcn.com/',
+                desc: '零类名，零内置组件',
+                icon: 'https://ui.shadcn.com/favicon.ico',
+                tags: [LinkCardTag.TAILWIND, LinkCardTag.REACT],
             },
             {
                 title: 'Magic UI',
