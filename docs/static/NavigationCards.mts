@@ -88,9 +88,9 @@ const tree: Tree = [
                 icon: 'https://shields.io/img/logo.png'
             },
             {
-                title:'在线获取网站图标',
-                desc:'在线获取网站图标',
-                link:'https://uutool.cn/web-icon/',
+                title: '在线获取网站图标',
+                desc: '在线获取网站图标',
+                link: 'https://uutool.cn/web-icon/',
             }
         ],
         children: [
@@ -154,6 +154,12 @@ const tree: Tree = [
             {
                 title: 'AI工具',
                 cards: [
+                    {
+                        title: 'Kimi.ai',
+                        link: 'https://kimi.moonshot.cn/',
+                        desc: 'Kimi AI 智能助手',
+                        icon: 'https://kimi.moonshot.cn/favicon.ico'
+                    },
                     {
                         title: 'blot',
                         link: 'https://bolt.new/',
@@ -234,9 +240,9 @@ const tree: Tree = [
                         icon: 'https://www.fusejs.io/assets/img/logo.png'
                     },
                     {
-                        title:'translate.js',
-                        desc:'翻译库',
-                        link:'https://translate.zvo.cn/index.html',
+                        title: 'translate.js',
+                        desc: '翻译库',
+                        link: 'https://translate.zvo.cn/index.html',
                     }
                 ]
             },
