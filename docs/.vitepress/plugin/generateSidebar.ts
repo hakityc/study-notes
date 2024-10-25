@@ -10,6 +10,7 @@ type SidebarItem = {
 
 type GenerateSidebarOptions = {
   basePath?: string;
+  collapsed?: boolean; // 控制是否默认折叠
   filterIndexMd?: boolean; // 控制是否过滤 index.md
   filterEmptyDirs?: boolean; // 控制是否过滤空文件夹
   excludePattern?: string[]; // 用于匹配文件名的字符串数组
@@ -19,6 +20,7 @@ type GenerateSidebarOptions = {
 
 type GenerateNavOptions = {
   basePath?: string;
+  collapsed?: boolean; // 控制是否默认折叠
   customOrder?: string[]; // 自定义排序的文件夹名
 
 };
@@ -72,7 +74,7 @@ export const generateSidebar = (options: GenerateSidebarOptions): Record<string,
         if (items.length > 0 || !filterEmptyDirs) {
           sidebar.push({
             text: file,
-            collapsed: true,
+            collapsed: options.collapsed,
             items
           });
         }
@@ -221,7 +223,7 @@ export const generateNav = (options: GenerateNavOptions): Array<{ text: string; 
   const navConfig: Array<{ text: string; link: string }> = directories.map((dir) => ({
     text: dir,
     link: `/TamDocs/${dir}/`,
-    collapsed: true
+    collapsed: options.collapsed
   }));
 
   return navConfig;
