@@ -494,6 +494,17 @@ const tree: Tree = [
         ]
     },
     {
+        title: '后端服务',
+        cards: [
+            {
+                title: 'free api',
+                desc: '在为开发人员的项目提供免费且可访问的 API',
+                link: 'https://api.freeapi.app/',
+                icon: 'https://api.freeapi.app/favicon.ico'
+            }
+        ]
+    },
+    {
         title: 'UI资源',
         cards: [
             {
