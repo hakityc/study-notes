@@ -80,6 +80,7 @@ const tree: Tree = [
                 title: 'Git Emoji',
                 desc: 'Git提交信息表情',
                 link: 'https://gitmoji.js.org/',
+                icon: 'https://gitmoji.js.org/../static/apple-icon-57x57.png'
             },
             {
                 title: 'Shields.io',
@@ -90,7 +91,7 @@ const tree: Tree = [
             {
                 title: '在线获取网站图标',
                 desc: '在线获取网站图标',
-                link: 'https://uutool.cn/web-icon/',
+                link: 'https://gonglue.qinggl.com/app/img/icon.jsp',
             }
         ],
         children: [
@@ -158,7 +159,7 @@ const tree: Tree = [
                         title: 'Kimi.ai',
                         link: 'https://kimi.moonshot.cn/',
                         desc: 'Kimi AI 智能助手',
-                        icon: 'https://kimi.moonshot.cn/favicon.ico'
+                        icon: 'https://statics.moonshot.cn/kimi-chat/favicon.ico'
                     },
                     {
                         title: 'blot',
@@ -180,7 +181,8 @@ const tree: Tree = [
                     {
                         title: 'ECharts',
                         desc: '百度开源的数据可视化库',
-                        link: 'https://echarts.apache.org/zh/index.html'
+                        link: 'https://echarts.apache.org/zh/index.html',
+                        icon: 'https://echarts.apache.org/zh/images/favicon.png?_v_=20240226'
                     },
                     {
                         title: 'Ant Vision',
@@ -252,7 +254,8 @@ const tree: Tree = [
                     {
                         title: 'Sentry',
                         desc: 'Application Monitoring and Error Tracking Software',
-                        link: 'https://sentry.io/welcome/'
+                        link: 'https://sentry.io/welcome/',
+                        icon: 'https://sentry.io/static/favicon-46f8676a36982f8eb852ac6860387755.ico'
 
                     }
                 ]
@@ -274,7 +277,7 @@ const tree: Tree = [
                     {
                         title: 'animate.css',
                         link: 'https://animate.style/',
-                        desc: 'CSS动画库',
+                        desc: 'CSS动画库'
                     }
                 ]
             },
@@ -285,11 +288,13 @@ const tree: Tree = [
                         title: 'npm',
                         desc: 'JavaScript 包管理器',
                         link: 'https://www.npmjs.com/',
+                        icon: 'https://static-production.npmjs.com/58a19602036db1daee0d7863c94673a4.png'
                     },
                     {
                         title: 'yarn',
                         desc: '快速、可靠、安全的依赖管理工具',
                         link: 'https://yarnpkg.com/',
+                        icon: 'https://yarnpkg.com/img/yarn-favicon.svg'
                     },
                     {
                         title: 'pnpm',
@@ -302,7 +307,7 @@ const tree: Tree = [
         ],
     },
     {
-        title: "官方文档",
+        title: "前端框架",
         cards: [
             {
                 title: "Vue 3",
@@ -347,6 +352,12 @@ const tree: Tree = [
                 tags: [LinkCardTag.VITE],
             },
             {
+                title: 'TanStack',
+                link: 'https://tanstack.com/',
+                desc: 'High-quality open-source software for web developers.',
+                icon: 'https://tanstack.com/favicon.ico',
+            },
+            {
                 title: 'Nuxt',
                 icon: 'https://nuxt.com/assets/design-kit/icon-green.svg',
                 desc: 'Vue.js 应用框架',
@@ -365,18 +376,12 @@ const tree: Tree = [
                 link: 'https://cn.electron-vite.org/'
 
             },
-            {
-                title: 'Yoga',
-                icon: 'https://www.yogalayout.dev/img/logo.svg',
-                desc: '一种可嵌入式布局系统',
-                link: 'https://yogalayout.com/',
-            },
-            {
-                title: '油猴开发指南',
-                desc: '油猴脚本开发指南',
-                link: 'https://learn.scriptcat.org/',
-                icon: 'https://learn.scriptcat.org/assets/images/logo.png'
-            }
+            // {
+            //     title: 'Yoga',
+            //     icon: 'https://www.yogalayout.dev/img/logo.svg',
+            //     desc: '一种可嵌入式布局系统',
+            //     link: 'https://yogalayout.com/',
+            // }
         ]
     },
     {
@@ -500,7 +505,7 @@ const tree: Tree = [
                 title: 'free api',
                 desc: '在为开发人员的项目提供免费且可访问的 API',
                 link: 'https://api.freeapi.app/',
-                icon: 'https://api.freeapi.app/favicon.ico'
+                icon: 'https://api.freeapi.app/favicon-32x32.png'
             }
         ]
     },
@@ -511,6 +516,7 @@ const tree: Tree = [
                 title: 'uiverse',
                 desc: '最大的开源UI库',
                 link: 'https://uiverse.io/',
+                icon: 'https://uiverse.io/favicon-32x32.png',
                 style: {
                     cardStyle: {
                         backgroundColor: '#001f3f',
@@ -522,6 +528,7 @@ const tree: Tree = [
                 title: 'Rauno',
                 desc: '交互设计参考',
                 link: 'https://rauno.me/',
+                icon: 'https://rauno.me/favicon.svg'
 
             },
             {
@@ -534,6 +541,7 @@ const tree: Tree = [
                 title: 'CSS loader',
                 desc: 'CSS加载动画示例',
                 link: 'https://css-loaders.com/',
+                icon: 'https://css-loaders.com/fav.png',
                 style: {
                     cardStyle: {
                         backgroundColor: '#e4e7ef',
@@ -550,6 +558,7 @@ const tree: Tree = [
                 title: 'icones',
                 desc: '图标库合集',
                 link: 'https://icones.netlify.app/',
+                icon: 'https://icones.netlify.app/favicon.svg'
             }
         ]
     },
@@ -610,6 +619,7 @@ const tree: Tree = [
                         desc: "Css选择器练习",
                         link: "https://flukeout.github.io",
                         tags: [LinkCardTag.CSS],
+                        icon: 'https://flukeout.github.io/favicon.png',
                         style: {
                             cardStyle: {
                                 backgroundColor: "#cf8e27",
@@ -624,6 +634,7 @@ const tree: Tree = [
                         title: 'Vue Challenges',
                         desc: 'Vue.js 挑战集合',
                         link: 'https://cn-vuejs-challenges.netlify.app/',
+                        icon: 'https://cn-vuejs-challenges.netlify.app/favicon.ico',
                         tags: [LinkCardTag.VUE],
                         style: {
                             cardStyle: {
@@ -650,6 +661,17 @@ const tree: Tree = [
                         title: 'Alorithm Visualizer',
                         desc: '算法可视化',
                         link: 'https://www.cs.usfca.edu/~galles/visualization/Algorithms.html',
+                    }
+                ]
+            },
+            {
+                title: '网页脚本',
+                cards: [
+                    {
+                        title: '油猴开发指南',
+                        desc: '油猴脚本开发指南',
+                        link: 'https://learn.scriptcat.org/',
+                        icon: 'https://learn.scriptcat.org/assets/images/logo.png'
                     }
                 ]
             }
