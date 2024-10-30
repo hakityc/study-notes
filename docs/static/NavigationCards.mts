@@ -385,6 +385,16 @@ const tree: Tree = [
         ]
     },
     {
+        title: '后端框架',
+        cards: [
+            {
+                title: 'django',
+                link: 'https://docs.djangoproject.com/zh-hans',
+                icon: 'https://docs.djangoproject.com/zh-hans/_static/django_logo.png',
+            }
+        ]
+    },
+    {
         title: "组件库",
         cards: [
             {
