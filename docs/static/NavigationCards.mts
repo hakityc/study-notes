@@ -278,6 +278,11 @@ const tree: Tree = [
                         title: 'animate.css',
                         link: 'https://animate.style/',
                         desc: 'CSS动画库'
+                    },
+                    {
+                        title: 'lottie files',
+                        link: 'https://app.lottiefiles.com/',
+                        desc: 'Great designs come alive with motion!'
                     }
                 ]
             },
