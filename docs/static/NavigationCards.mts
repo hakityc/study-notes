@@ -199,7 +199,18 @@ const tree: Tree = [
                 ]
             },
             {
-                title: '轻量JS工具库',
+                title: '通用',
+                cards: [
+                    {
+                        title: 'algolia',
+                        link: 'https://www.algolia.com/',
+                        desc: 'Show users what they need',
+                        icon: 'https://www.algolia.com/favicon.ico'
+                    }
+                ]
+            },
+            {
+                title: '轻量工具库',
                 cards: [
                     {
                         title: 'Axios',
