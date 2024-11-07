@@ -671,6 +671,12 @@ const tree: Tree = [
                                 color: '#fff'
                             }
                         }
+                    }, 
+                    {
+                        title: 'framework comparison',
+                        link: 'https://component-party.lainbo.com/',
+                        desc: '各个常见前端框架基础用法对比',
+                        tags: [LinkCardTag.VUE, LinkCardTag.REACT],
                     }
                 ]
             },
