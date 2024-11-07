@@ -119,7 +119,7 @@ const tree: Tree = [
         title: "开发工具",
         children: [
             {
-                title: '常用',
+                title: '编码工具',
                 cards: [
                     {
                         title: 'Vueuse',
@@ -149,8 +149,82 @@ const tree: Tree = [
                         link: 'https://redux.js.org/',
                         tags: [LinkCardTag.REACT],
                     },
-
+                ],
+                children: [
+                    {
+                        title: '轻量工具库',
+                        cards: [
+                            {
+                                title: 'Axios',
+                                icon: 'https://axios-http.com/assets/logo.svg',
+                                desc: 'Promise based HTTP client for the browser and node.js',
+                                link: 'https://www.axios-http.cn/',
+                            },
+                            {
+                                title: 'Lodash',
+                                icon: 'https://lodash.com/assets/img/lodash.svg',
+                                desc: 'A modern JavaScript utility library delivering modularity, performance & extras.',
+                                link: 'https://www.lodashjs.com/',
+                            },
+                            {
+                                title: 'Day.js',
+                                icon: 'https://day.js.org/img/logo.png',
+                                desc: '2kB immutable date library alternative to Moment.js with the same modern API',
+                                link: 'https://day.js.org/zh-CN/',
+                            },
+                            {
+                                title: 'Mock.js',
+                                desc: '生成随机数据，拦截 Ajax 请求',
+                                link: 'http://mockjs.com/',
+                            },
+                            {
+                                title: 'Color Thief',
+                                desc: '提取图片主色调',
+                                link: 'https://lokeshdhakar.com/projects/color-thief/',
+                            },
+                            {
+                                title: 'Driver.js',
+                                desc: '轻量级的引导库',
+                                link: 'https://driverjs.com/',
+                                icon: 'https://driverjs.com/driver.svg'
+                            },
+                            {
+                                title: 'Fuse.js',
+                                desc: '轻量级的模糊搜索库',
+                                link: 'https://fusejs.io/',
+                                icon: 'https://www.fusejs.io/assets/img/logo.png'
+                            },
+                            {
+                                title: 'translate.js',
+                                desc: '翻译库',
+                                link: 'https://translate.zvo.cn/index.html',
+                            }
+                        ]
+                    },
+                    {
+                        title: '其他',
+                        cards: [
+                            {
+                                title: 'algolia',
+                                link: 'https://www.algolia.com/',
+                                desc: 'Show users what they need',
+                                icon: 'https://www.algolia.com/favicon.ico'
+                            }
+                        ]
+                    }
                 ]
+            },
+            {
+                title: '项目工具',
+                cards: [
+                    {
+                        title: 'vfox',
+                        link: 'https://vfox.lhan.me/zh-hans/',
+                        desc: '跨平台、可拓展的版本管理器',
+                        icon: 'https://vfox.lhan.me/zh-hans/favicon.ico'
+                    }
+                ]
+
             },
             {
                 title: 'AI工具',
@@ -201,62 +275,6 @@ const tree: Tree = [
             {
                 title: '通用',
                 cards: [
-                    {
-                        title: 'algolia',
-                        link: 'https://www.algolia.com/',
-                        desc: 'Show users what they need',
-                        icon: 'https://www.algolia.com/favicon.ico'
-                    }
-                ]
-            },
-            {
-                title: '轻量工具库',
-                cards: [
-                    {
-                        title: 'Axios',
-                        icon: 'https://axios-http.com/assets/logo.svg',
-                        desc: 'Promise based HTTP client for the browser and node.js',
-                        link: 'https://www.axios-http.cn/',
-                    },
-                    {
-                        title: 'Lodash',
-                        icon: 'https://lodash.com/assets/img/lodash.svg',
-                        desc: 'A modern JavaScript utility library delivering modularity, performance & extras.',
-                        link: 'https://www.lodashjs.com/',
-                    },
-                    {
-                        title: 'Day.js',
-                        icon: 'https://day.js.org/img/logo.png',
-                        desc: '2kB immutable date library alternative to Moment.js with the same modern API',
-                        link: 'https://day.js.org/zh-CN/',
-                    },
-                    {
-                        title: 'Mock.js',
-                        desc: '生成随机数据，拦截 Ajax 请求',
-                        link: 'http://mockjs.com/',
-                    },
-                    {
-                        title: 'Color Thief',
-                        desc: '提取图片主色调',
-                        link: 'https://lokeshdhakar.com/projects/color-thief/',
-                    },
-                    {
-                        title: 'Driver.js',
-                        desc: '轻量级的引导库',
-                        link: 'https://driverjs.com/',
-                        icon: 'https://driverjs.com/driver.svg'
-                    },
-                    {
-                        title: 'Fuse.js',
-                        desc: '轻量级的模糊搜索库',
-                        link: 'https://fusejs.io/',
-                        icon: 'https://www.fusejs.io/assets/img/logo.png'
-                    },
-                    {
-                        title: 'translate.js',
-                        desc: '翻译库',
-                        link: 'https://translate.zvo.cn/index.html',
-                    }
                 ]
             },
             {
@@ -671,7 +689,7 @@ const tree: Tree = [
                                 color: '#fff'
                             }
                         }
-                    }, 
+                    },
                     {
                         title: 'framework comparison',
                         link: 'https://component-party.lainbo.com/',
