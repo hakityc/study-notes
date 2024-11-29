@@ -559,6 +559,17 @@ const tree: Tree = [
         },
       },
       {
+        title:'awwwards',
+        desc:'网站设计奖',
+        link:'https://www.awwwards.com/',
+        style:{
+          cardStyle:{
+            backgroundColor:'#001f3f',
+            color:'#fff'
+          }
+        }
+      },
+      {
         title: "UI Colors",
         link: "https://uicolors.app/create",
         desc: "Tailwind CSS Color Generator",
