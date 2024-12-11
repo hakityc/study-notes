@@ -1,4 +1,4 @@
-name: Build and Deploy on Aliyun
+name: Build and Deploy on my server
 
 on:
   push:
@@ -9,12 +9,12 @@ on:
   #   branches:
   #     - main
 
-env:
-  NODE_VERSION: "18"
-  BUILD_DIR: ${{ vars.BUILD_DIR }}
-  DEPLOY_USER: ${{ vars.USER }}
-  DEPLOY_SERVER: ${{ secrets.SERVER }}
-  DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
+# env:
+#   NODE_VERSION: "18"
+#   BUILD_DIR: ${{ vars.BUILD_DIR }}
+#   DEPLOY_USER: ${{ vars.USER }}
+#   DEPLOY_SERVER: ${{ secrets.SERVER }}
+#   DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
 
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: "20"
 
       - name: Install Dependencies
         run: npm ci
@@ -39,13 +39,13 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-artifact
-          path: ${{ env.BUILD_DIR }}
-          
+          path: ${{ vars.BUILD_DIR }}
+
       - name: Check Build Dir
-        run: | 
+        run: |
           pwd
-          ls -a ${{ env.BUILD_DIR }} 
-          
+          ls -a ${{ vars.BUILD_DIR }}
+
   deploy:
     name: Deploy
     needs: build
@@ -59,15 +59,31 @@ jobs:
         with:
           name: build-artifact
 
-      - name: Deploy to Staging server
+      - name: Deploy to Aliyun server
         uses: easingthemes/ssh-deploy@main
         with:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ${{ env.aliyun.secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDzvc -i"
           SOURCE: "/"
-          REMOTE_HOST: ${{ env.DEPLOY_SERVER }}
-          REMOTE_USER: ${{ env.DEPLOY_USER }}
-          TARGET: ${{ env.DEPLOY_PATH }}
+          REMOTE_HOST: ${{ secrets.SERVER }}
+          REMOTE_USER: ${{ vars.USER }}
+          TARGET: ${{ vars.DEPLOY_PATH }}
+          #EXCLUDE: "/dist/, /node_modules/"#
+          SCRIPT_BEFORE: |
+            ls -a
+          SCRIPT_AFTER: |
+            ls -a
+            echo $RSYNC_STDOUT
+
+      - name: Deploy to Huaweiyun server
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ env.aliyun.secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvc -i"
+          SOURCE: "/"
+          REMOTE_HOST: ${{ secrets.SERVER }}
+          REMOTE_USER: ${{ vars.USER }}
+          TARGET: ${{ vars.DEPLOY_PATH }}
           #EXCLUDE: "/dist/, /node_modules/"#
           SCRIPT_BEFORE: |
             ls -a
