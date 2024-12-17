@@ -559,15 +559,15 @@ const tree: Tree = [
         },
       },
       {
-        title:'awwwards',
-        desc:'网站设计奖',
-        link:'https://www.awwwards.com/',
-        style:{
-          cardStyle:{
-            backgroundColor:'#001f3f',
-            color:'#fff'
-          }
-        }
+        title: "awwwards",
+        desc: "网站设计奖",
+        link: "https://www.awwwards.com/",
+        style: {
+          cardStyle: {
+            backgroundColor: "#001f3f",
+            color: "#fff",
+          },
+        },
       },
       {
         title: "UI Colors",
@@ -608,6 +608,12 @@ const tree: Tree = [
         desc: "图标库合集",
         link: "https://icones.netlify.app/",
         icon: "https://icones.netlify.app/favicon.svg",
+      },
+      {
+        title: "lucide",
+        link: "https://lucide.dev/guide/packages/lucide-react",
+        desc: "图标库合集",
+        icon: "https://lucide.dev/guide/packages/lucide-react/favicon.ico",
       },
     ],
   },
