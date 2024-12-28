@@ -4,6 +4,7 @@ import { themeConfig } from "./themeConfig.mts";
 import UnoCSS from "unocss/vite";
 import { resolve } from "path";
 // import viteConfig from "../../vite.config";
+import liveReload from "vite-plugin-live-reload";
 
 export default defineConfig({
   title: "Tam的博客",
@@ -19,7 +20,7 @@ export default defineConfig({
         apiKey: "...",
         indexName: "...",
         locales: {
-          root: { 
+          root: {
             placeholder: "搜索文档",
             translations: {
               button: {
@@ -78,7 +79,7 @@ export default defineConfig({
         "@": resolve(__dirname, "../../../docs"),
       },
     },
-    plugins: [UnoCSS()],
+    plugins: [UnoCSS(), liveReload("@/TamDocs/**/**/*.md")],
     server: {
       watch: {},
     },

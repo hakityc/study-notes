@@ -49,7 +49,7 @@ const getTagStyle = (tag: LinkCardTag) => {
   >
     <!-- <div class="link-card-header"></div> -->
     <div class="flex justify-start items-center gap-4 flex-1 h-0">
-      <!-- <img v-if="props.card.icon" class="w-10 h-10 overflow-hidden group-hover:filter-30 shrink-0" :src="props.card.icon" :alt="props.card.title" />-->
+      <img v-if="props.card.icon" class="w-10 h-10 overflow-hidden group-hover:filter-30 shrink-0" :src="`../../assets/icon/${props.card.code}.png`" :alt="props.card.title" />
       <div class="flex flex-col justify-start items-start w-0 flex-1 overflow-hidden">
         <span class="font-700">{{ props.card.title }}</span>
         <div class="w-full flex gap-1">
