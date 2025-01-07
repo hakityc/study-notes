@@ -66,7 +66,8 @@ const downloadIcon = async () => {
           file.close(resolve);
         });
         file.on("error", (err) => {
-          reject(err);
+          // reject(err);
+          console.log('错误:',err)
         });
       });
       cb(null);
@@ -81,7 +82,7 @@ const downloadIcon = async () => {
   };
 
   for (const item of array) {
-    if (item.icon) {
+    if (item.icon && !item.icon.includes("svg")) {
       await download(item.icon, path.resolve(__dirname, `../docs/assets/icon/${item.code}.png`), (err) => {
         if (err) {
           console.error(`Failed to download icon from ${item.icon}: ${err}`);
@@ -137,7 +138,7 @@ const transformData = () => {
 };
 
 const main = async () => {
-  transformData()
+  downloadIcon()
 };
 
 await main();
