@@ -12,7 +12,7 @@ export const themeConfig = {
         filterIndexMd: true,
         filterEmptyDirs: true,
         excludePattern: [],
-        collapsed: false,
+        collapsed: true,
         customOrder: new Map([
             ['前端开发', ['😋HTML', '😎JavaScript', '👽Vue']],
             ['开发工具', ['npm', 'nvm']],
