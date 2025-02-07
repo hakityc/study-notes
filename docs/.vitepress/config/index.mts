@@ -13,7 +13,7 @@ export default defineConfig({
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
   themeConfig: {
     logo: "/favicon.ico",
-    siteTitle: "Tam Blog",
+    siteTitle: "Hak1's Blog",
     search,
     lastUpdated: {
       text: "最后更新时间",

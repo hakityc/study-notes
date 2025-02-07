@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: Tam Blog
+  name: Hak1's Blog
   text: 记录学习过程
   tagline: 急之易不暇,缓之或自明
   image:
