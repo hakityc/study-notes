@@ -8,7 +8,7 @@ import liveReload from "vite-plugin-live-reload";
 import { search } from "./includes/search.ts";
 
 export default defineConfig({
-  title: "Tam的博客",
+  title: "hak1的博客",
   description: "",
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
   themeConfig: {
