@@ -4,7 +4,7 @@
         "Sindresorhus"
     ],
     "marscode.codeCompletionPro": {
-        "enableCodeCompletionPro": false
+        "enableCodeCompletionPro": true
     },
     "marscode.enableInlineCommand": true
 }
