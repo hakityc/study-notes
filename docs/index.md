@@ -27,3 +27,9 @@ hero:
 #     title: 速度真的很快！
 #     details: 采用静态 HTML 实现快速的页面初次加载，使用客户端路由实现快速的页面切换导航。
 ---
+<script setup>
+
+import HomeFooter from '@/components/layout/home-footer.vue'
+</script>
+
+<home-footer/>
