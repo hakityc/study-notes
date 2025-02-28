@@ -1,4 +1,4 @@
-import { generateNav, generateSidebar } from "../plugin/generateSidebar";
+import { generateNav, generateSidebar } from "../utils/generateSidebar";
 
 export const themeConfig = {
   nav: generateNav({
