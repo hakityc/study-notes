@@ -1,11 +1,8 @@
 // .vitepress/config.js
 import { defineConfig } from "vitepress";
 import { themeConfig } from "./themeConfig.mts";
-import UnoCSS from "unocss/vite";
-import { resolve } from "path";
-// import viteConfig from "../../vite.config";
-import liveReload from "vite-plugin-live-reload";
 import { search } from "./includes/search.ts";
+import viteConfig from "../../../vite.config.ts";
 
 export default defineConfig({
   title: "hak1的博客",
@@ -24,16 +21,6 @@ export default defineConfig({
     },
     ...themeConfig,
   },
-  vite: {
-    resolve: {
-      alias: {
-        "@": resolve(__dirname, "../../../docs"),
-      },
-    },
-    plugins: [UnoCSS(), liveReload("@/TamDocs/**/**/*.md")],
-    server: {
-      watch: {},
-    },
-  },
+  vite: viteConfig,
   base: "/blog/",
 });
