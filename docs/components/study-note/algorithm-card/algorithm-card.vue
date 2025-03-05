@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import AlgorithmCardItem from './algorithm-card-item.vue'
+import AlgorithmCardItem from "./algorithm-card-item.vue";
 
 defineProps<{
-  timeComplexity: String,
-  spaceComplexity: String,
-  isStable: Boolean,
-  inPlace: Boolean
-}>()
+	timeComplexity: string;
+	spaceComplexity: string;
+	isStable: boolean;
+	inPlace: boolean;
+}>();
 </script>
 <template>
-  <div class="p-4 bg-white dark:bg-gray-800 rounded-lg  transition-shadow hover:shadow-lg shadow-sm">
+  <div class="p-4 bg-gray-50 dark:bg-#161618 rounded-lg  transition-shadow hover:shadow-lg shadow-sm">
     <div class="flex justify-between gap-4">
       <!-- 时间复杂度 -->
       <AlgorithmCardItem emoji="⏱️" label="时间复杂度" :value="timeComplexity" />

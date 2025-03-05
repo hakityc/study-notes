@@ -1,12 +1,12 @@
 <script setup lang="ts">
 defineProps<{
-  emoji: String,
-  label: String,
-  value: String
-}>()
+	emoji: string;
+	label: string;
+	value?: string;
+}>();
 </script>
 <template>
-  <div class="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg flex flex-col">
+  <div class="p-3 bg-gray-50 dark:bg-#161618 rounded-lg flex flex-col">
     <div class="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2">
       <span>{{ emoji }}</span>
       <span>{{ label }}</span>
