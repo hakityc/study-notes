@@ -3,8 +3,8 @@ import { resolve } from 'path'
 import UnoCSS from "unocss/vite";
 import liveReload from "vite-plugin-live-reload";
 import AutoImport from "unplugin-auto-import/vite";
-import Components from "unplugin-vue-components/vite";
-import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
+// import Components from "unplugin-vue-components/vite";
+// import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
 
 export default defineConfig({
     resolve: {
@@ -28,19 +28,18 @@ export default defineConfig({
                 /\.md$/, // .md
             ],
         }),
-        Components({
-            dts: "types/components.d.ts",
-            include: [
-                /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-                /\.vue$/, /\.vue\?vue/, // .vue
-                /\.md$/, // .md
-            ],
-            resolvers: [AntDesignVueResolver({
-                importStyle: false,
-                resolveIcons: true,
-                packageName: "ant-design-vue",
-            })],
-        }),
+        // Components({
+        //     dts: "types/components.d.ts",
+        //     include: [
+        //         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        //         /\.vue$/, /\.vue\?vue/, // .vue
+        //         /\.md$/, // .md
+        //     ],
+        //     resolvers: [AntDesignVueResolver({
+        //         resolveIcons: true,
+        //         packageName: "ant-design-vue",
+        //     })],
+        // }),
     ]
 })
 

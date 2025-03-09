@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 /** imports  */
+import { Collapse, CollapsePanel } from "ant-design-vue";
 // biome-ignore lint/suspicious/noEmptyInterface: <explanation>
 interface Props {}
 
@@ -20,17 +21,17 @@ const activeKey = ref<string | number | undefined>(undefined);
 </script>
 
 <template>
-  <ACollapse
+  <Collapse
     v-model:activeKey="activeKey"
     :bordered="false"
   >
-    <ACollapsePanel
+    <CollapsePanel
       key="1"
       header="答案"
     >
       <slot></slot>
-    </ACollapsePanel>
-  </ACollapse>
+    </CollapsePanel>
+  </Collapse>
 </template>
 
 <style scoped></style>
