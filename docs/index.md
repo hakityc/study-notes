@@ -31,9 +31,3 @@ features:
     details: 总结业务开发中遇到的各类问题和解决方案，避免重复踩坑。
     link: /TamDocs/业务开发/
 ---
-<script setup>
-
-import HomeFooter from '@/components/layout/home-footer.vue'
-</script>
-
-<home-footer/>

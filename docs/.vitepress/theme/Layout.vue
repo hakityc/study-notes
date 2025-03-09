@@ -3,6 +3,7 @@
 import { theme, ConfigProvider } from "ant-design-vue";
 import { useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
+import HomeFooter from "@/components/layout/home-footer.vue";
 // biome-ignore lint/suspicious/noEmptyInterface: <explanation>
 interface Props {}
 
@@ -29,7 +30,10 @@ const { isDark } = useData();
       algorithm: isDark ? theme.darkAlgorithm : theme.defaultAlgorithm,
     }"
   >
-    <DefaultTheme.Layout />
+    <div class="wh-full relative">
+      <DefaultTheme.Layout />
+      <HomeFooter />
+    </div>
   </ConfigProvider>
 </template>
 
