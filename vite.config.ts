@@ -14,7 +14,7 @@ export default defineConfig({
     },
     plugins: [
         UnoCSS(),
-        liveReload("@/TamDocs/**/**/*.md"),
+        liveReload("TamDocs/**/**/*.md"),
         AutoImport({
             imports: [
                 "vue",
@@ -27,7 +27,7 @@ export default defineConfig({
             }),],
         }),
         Components({
-            dts: "@/types/components.d.ts",
+            dts: "types/components.d.ts",
             include: [/\.ts$/, /\.vue$/],
             resolvers: [AntDesignVueResolver({
                 importStyle: false,
