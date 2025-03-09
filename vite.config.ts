@@ -4,6 +4,7 @@ import UnoCSS from "unocss/vite";
 import liveReload from "vite-plugin-live-reload";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
+import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
 
 export default defineConfig({
     resolve: {
@@ -21,12 +22,14 @@ export default defineConfig({
                 "@vueuse/core",
             ],
             dts: "types/auto-imports.d.ts",
-            resolvers: [],
+            resolvers: [AntDesignVueResolver({
+                importStyle: false,
+            }),],
         }),
         Components({
             dts: "@/types/components.d.ts",
             include: [/\.ts$/, /\.vue$/],
-            resolvers: [],
+            resolvers: [AntDesignVueResolver()],
         }),
     ]
 })
