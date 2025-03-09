@@ -8,8 +8,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    ACollapse: typeof import('ant-design-vue/es')['Collapse']
-    ACollapsePanel: typeof import('ant-design-vue/es')['CollapsePanel']
-    AConfigProvider: typeof import('ant-design-vue/es')['ConfigProvider']
+    ACollapse: typeof import('ant-design-vue')['Collapse']
+    ACollapsePanel: typeof import('ant-design-vue')['CollapsePanel']
+    AConfigProvider: typeof import('ant-design-vue')['ConfigProvider']
   }
 }
