@@ -22,9 +22,6 @@ export default defineConfig({
                 "@vueuse/core",
             ],
             dts: "types/auto-imports.d.ts",
-            resolvers: [AntDesignVueResolver({
-                importStyle: false,
-            }),],
         }),
         Components({
             dts: "types/components.d.ts",
