@@ -28,7 +28,7 @@
     "docs/**/*.ts",
     "docs/**/*.d.ts",
     "docs/**/*.vue",
-    "types/*",
+    "types/*", "docs/.vitepress/theme/Layout.vue",
   ],
   "references": [
     {

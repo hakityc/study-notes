@@ -29,7 +29,10 @@ export default defineConfig({
         Components({
             dts: "@/types/components.d.ts",
             include: [/\.ts$/, /\.vue$/],
-            resolvers: [AntDesignVueResolver()],
+            resolvers: [AntDesignVueResolver({
+                importStyle: false,
+                resolveIcons: true,
+            })],
         }),
     ]
 })

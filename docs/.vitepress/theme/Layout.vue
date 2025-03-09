@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 /** imports  */
+import { theme } from "ant-design-vue";
+import { useData } from "vitepress";
+import DefaultTheme from "vitepress/theme";
 // biome-ignore lint/suspicious/noEmptyInterface: <explanation>
 interface Props {}
 
@@ -7,7 +10,8 @@ interface Props {}
 defineProps<Props>();
 
 /** ref  */
-const activeKey = ref<string | number | undefined>(undefined);
+const { isDark } = useData();
+
 /** computed */
 
 /** hooks */
@@ -20,19 +24,13 @@ const activeKey = ref<string | number | undefined>(undefined);
 </script>
 
 <template>
-  <ACollapse
-    v-model:activeKey="activeKey"
-    :bordered="false"
+  <AConfigProvider
+    :theme="{
+      algorithm: isDark ? theme.darkAlgorithm : theme.defaultAlgorithm,
+    }"
   >
-    <ACollapsePanel
-      key="1"
-      header="答案"
-    >
-      <span>
-        <slot></slot>
-      </span>
-    </ACollapsePanel>
-  </ACollapse>
+    <DefaultTheme.Layout />
+  </AConfigProvider>
 </template>
 
 <style scoped></style>
