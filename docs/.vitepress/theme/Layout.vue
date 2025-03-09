@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 /** imports  */
-import { theme } from "ant-design-vue";
+import { theme, ConfigProvider } from "ant-design-vue";
 import { useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 // biome-ignore lint/suspicious/noEmptyInterface: <explanation>
@@ -24,13 +24,13 @@ const { isDark } = useData();
 </script>
 
 <template>
-  <AConfigProvider
+  <ConfigProvider
     :theme="{
       algorithm: isDark ? theme.darkAlgorithm : theme.defaultAlgorithm,
     }"
   >
     <DefaultTheme.Layout />
-  </AConfigProvider>
+  </ConfigProvider>
 </template>
 
 <style scoped></style>
