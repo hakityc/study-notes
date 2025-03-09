@@ -22,10 +22,19 @@ export default defineConfig({
                 "@vueuse/core",
             ],
             dts: "types/auto-imports.d.ts",
+            include: [
+                /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+                /\.vue$/, /\.vue\?vue/, // .vue
+                /\.md$/, // .md
+            ],
         }),
         Components({
             dts: "types/components.d.ts",
-            include: [/\.ts$/, /\.vue$/],
+            include: [
+                /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+                /\.vue$/, /\.vue\?vue/, // .vue
+                /\.md$/, // .md
+            ],
             resolvers: [AntDesignVueResolver({
                 importStyle: false,
                 resolveIcons: true,
