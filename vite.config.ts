@@ -38,6 +38,7 @@ export default defineConfig({
             resolvers: [AntDesignVueResolver({
                 importStyle: false,
                 resolveIcons: true,
+                packageName: "ant-design-vue",
             })],
         }),
     ]
