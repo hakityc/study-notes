@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 /** imports  */
+import { ACollapse, ACollapsePanel } from "ant-design-vue";
 // biome-ignore lint/suspicious/noEmptyInterface: <explanation>
 interface Props {}
 
