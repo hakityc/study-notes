@@ -10,6 +10,7 @@
 JavaScript基本类型和引用类型有哪些，存储上有什么区别？
 
 <AnswerBlock >
+
 **基本类型**：Number、String、Boolean、Undefined、null、Symbol  
 **引用类型**：Object、Array、Function、Date、RegExp等  
 
@@ -25,7 +26,9 @@ JavaScript基本类型和引用类型有哪些，存储上有什么区别？
 说说你了解的js数据结构？
 
 <AnswerBlock>
+
 常见数据结构：  
+
 1. **数组**：连续内存空间存储数据  
 2. **栈**：LIFO（后进先出），常用push/pop操作  
 3. **队列**：FIFO（先进先出），常用enqueue/dequeue操作  
@@ -42,7 +45,9 @@ JavaScript基本类型和引用类型有哪些，存储上有什么区别？
 DOM常见的操作有哪些？
 
 <AnswerBlock>
+
 **DOM操作分类**：  
+
 1. **创建节点**：createElement、createTextNode、createDocumentFragment  
 2. **获取节点**：getElementById、querySelector、getElementsByClassName  
 3. **更新节点**：innerHTML、textContent、setAttribute  
@@ -58,7 +63,9 @@ DOM常见的操作有哪些？
 说说你对BOM的理解，常见的BOM对象你了解哪些？
 
 <AnswerBlock>
+
 **BOM（浏览器对象模型）**：  
+
 - 用于与浏览器窗口交互的API  
 - 顶级对象是`window`，包含以下常用对象：  
   - **location**：获取/操作URL（href、search、hash）  
@@ -75,7 +82,9 @@ DOM常见的操作有哪些？
 ==和===区别，分别在什么情况使用？
 
 <AnswerBlock>
+
 **区别**：  
+
 - `==`：宽松相等，会进行类型转换  
 - `===`：严格相等，必须类型和值都相同  
 
@@ -93,7 +102,9 @@ DOM常见的操作有哪些？
 typeof与instanceof区别？
 
 <AnswerBlock>
+
 **区别**：  
+
 - `typeof`：返回原始类型字符串（对引用类型除函数外都返回"object"）  
 - `instanceof`：检查对象是否是某个构造函数的实例  
 
@@ -120,7 +131,9 @@ typeof function(){} // "function"
 JavaScript原型与原型链的特点是什么？
 
 <AnswerBlock>
+
 **原型特点**：  
+
 - 每个函数都有`prototype`属性，指向原型对象  
 - 原型对象默认有`constructor`属性指向构造函数  
 - 实例对象通过`__proto__`访问原型  
@@ -138,7 +151,9 @@ JavaScript原型与原型链的特点是什么？
 说说你对作用域链的理解？
 
 <AnswerBlock>
+
 **作用域链**：  
+
 - 函数执行时创建的作用域层级链  
 - 查找变量时从当前作用域开始，逐层向上查找  
 - 包含：  
@@ -158,7 +173,9 @@ JavaScript原型与原型链的特点是什么？
 谈谈this对象的理解？
 
 <AnswerBlock>
+
 **this的绑定规则**：  
+
 1. **默认绑定**：独立函数调用时指向`window`（严格模式`undefined`）  
 2. **隐式绑定**：对象方法调用时指向调用对象  
 3. **显式绑定**：`call`/`apply`/`bind`指定this  
@@ -179,7 +196,9 @@ JavaScript原型与原型链的特点是什么？
 说说new操作符具体干了什么？流程是怎样的？如何手写？
 
 <AnswerBlock>
+
 **new操作符流程**：  
+
 1. 创建空对象`obj`  
 2. 设置`obj.__proto__ = 构造函数.prototype`  
 3. 执行构造函数，绑定this为obj  
@@ -202,7 +221,9 @@ function myNew(constructor, ...args) {
 bind、call、apply区别？如何实现一个bind？
 
 <AnswerBlock>
+
 **区别**：  
+
 - `call`：立即执行，参数列表传递  
 - `apply`：立即执行，数组形式传参  
 - `bind`：返回新函数，可延迟执行  
@@ -225,7 +246,9 @@ Function.prototype.myBind = function(context, ...args) {
 JavaScript中执行上下文和执行栈是什么？
 
 <AnswerBlock>
+
 **执行上下文**：  
+
 - 代码执行时的环境，包含：  
   - 变量对象（存储变量、函数声明）  
   - 作用域链  
@@ -249,7 +272,9 @@ JavaScript中执行上下文和执行栈是什么？
 说说JavaScript中的事件模型？
 
 <AnswerBlock>
+
 **事件流阶段**：  
+
 1. 捕获阶段（从window到目标元素）  
 2. 目标阶段（事件触发元素）  
 3. 冒泡阶段（从目标元素到window）  
@@ -272,7 +297,9 @@ JavaScript中执行上下文和执行栈是什么？
 事件代理是什么？有哪些应用场景？
 
 <AnswerBlock>
+
 **事件代理**：  
+
 - 将事件绑定到父元素，通过事件冒泡触发目标元素  
 
 **应用场景**：  
@@ -293,7 +320,9 @@ JavaScript中执行上下文和执行栈是什么？
 说说你对闭包的理解？闭包使用场景有哪些？
 
 <AnswerBlock>
+
 **闭包定义**：  
+
 - 函数内部嵌套函数，内部函数引用外部变量  
 
 **特性**：  
@@ -321,7 +350,9 @@ JavaScript中执行上下文和执行栈是什么？
 概述JavaScript类型转换机制？
 
 <AnswerBlock>
+
 **类型转换分类**：  
+
 1. **显式转换**：  
    - `Number()`：转换为数值  
    - `String()`：转换为字符串  
@@ -345,7 +376,9 @@ JavaScript中执行上下文和执行栈是什么？
 深拷贝浅拷贝的区别？如何实现一个深拷贝？
 
 <AnswerBlock>
+
 **区别**：  
+
 - 浅拷贝：复制对象引用，修改会影响原对象  
 - 深拷贝：递归复制所有层级属性  
 
@@ -376,8 +409,11 @@ JavaScript中执行上下文和执行栈是什么？
 Javascript中如何实现函数缓存？函数缓存有哪些应用场景？
 
 <AnswerBlock>
+
 **实现方法**：  
+
 1. **闭包缓存**：  
+
    ```javascript
    function memoize(fn) {
      const cache = new Map();
@@ -390,6 +426,7 @@ Javascript中如何实现函数缓存？函数缓存有哪些应用场景？
      };
    }
    ```
+
 2. **装饰器模式**  
 3. **WeakMap优化**（避免内存泄漏）  
 
@@ -407,7 +444,9 @@ Javascript中如何实现函数缓存？函数缓存有哪些应用场景？
 JavaScript字符串的常用方法有哪些？
 
 <AnswerBlock>
+
 **常用方法**：  
+
 1. **操作方法**：  
    - `concat()`：拼接字符串  
    - `slice()`/`substring()`/`substr()`：截取子串  
@@ -435,7 +474,9 @@ JavaScript字符串的常用方法有哪些？
 数组的常用方法有哪些？
 
 <AnswerBlock>
+
 **常用方法**：  
+
 1. **操作方法**：  
    - `push()`/`pop()`：末尾增删  
    - `shift()`/`unshift()`：头部增删  
@@ -469,7 +510,9 @@ JavaScript字符串的常用方法有哪些？
 说说你对事件循环的理解？
 
 <AnswerBlock>
+
 **事件循环机制**：  
+
 - JavaScript是单线程，通过事件循环处理异步操作  
 - 执行栈处理同步任务，任务队列处理异步回调  
 
@@ -496,6 +539,7 @@ JavaScript字符串的常用方法有哪些？
 JavaScript本地存储有哪些方式？它们有什么区别和应用场景？
 
 <AnswerBlock>
+
 **存储方式对比**：  
 
 | 特性          | Cookie          | localStorage      | sessionStorage    | indexedDB       |
@@ -519,7 +563,9 @@ JavaScript本地存储有哪些方式？它们有什么区别和应用场景？
 大文件上传如何做断点续传？
 
 <AnswerBlock>
+
 **实现步骤**：  
+
 1. **文件分片**：将文件分割为固定大小的块（如10MB）  
 2. **生成唯一标识**：计算文件MD5或SHA-1哈希值  
 3. **记录上传状态**：保存已上传的分片索引  
@@ -546,7 +592,9 @@ JavaScript本地存储有哪些方式？它们有什么区别和应用场景？
 ajax原理是什么？如何实现？
 
 <AnswerBlock>
+
 **原理**：  
+
 - 通过`XMLHttpRequest`对象异步获取数据  
 - 无需刷新页面更新内容  
 - 支持JSON、XML等数据格式  
@@ -588,7 +636,9 @@ function ajax(url, options = {}) {
 什么是防抖和节流？有什么区别？如何实现？
 
 <AnswerBlock>
+
 **防抖（Debounce）**：  
+
 - 事件触发后延迟执行，期间多次触发会重新计时  
 - 用于搜索框输入、窗口resize等  
 
@@ -633,8 +683,11 @@ function throttle(fn, delay = 100) {
 如何判断一个元素是否在可视区域？实现方式有哪些？用途和应用场景是什么？
 
 <AnswerBlock>
+
 **实现方式**：  
+
 1. **getBoundingClientRect()**：  
+
    ```javascript
    function isInViewport(el) {
      const rect = el.getBoundingClientRect();
@@ -674,7 +727,9 @@ function throttle(fn, delay = 100) {
 什么是单点登录？如何实现？
 
 <AnswerBlock>
+
 **单点登录（SSO）**：  
+
 - 用户只需登录一次即可访问多个关联系统  
 
 **实现方式**：  
@@ -705,9 +760,12 @@ function throttle(fn, delay = 100) {
 如何实现上拉加载，下拉刷新？
 
 <AnswerBlock>
+
 **上拉加载**：  
+
 1. 监听`scroll`事件  
 2. 判断滚动到底部：  
+
    ```javascript
    window.addEventListener('scroll', () => {
      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -737,7 +795,9 @@ function throttle(fn, delay = 100) {
 正则表达式是什么？有哪些匹配规则和常用方法？应用场景有哪些？
 
 <AnswerBlock>
+
 **正则表达式**：  
+
 - 用于匹配、搜索、替换字符串的模式  
 
 **匹配规则**：  
@@ -770,7 +830,9 @@ function throttle(fn, delay = 100) {
 说说你对函数式编程的理解？优缺点有哪些？
 
 <AnswerBlock>
+
 **函数式编程（FP）**：  
+
 - 以函数为核心，强调纯函数和不可变性  
 - 避免副作用，通过组合函数实现复杂逻辑  
 
@@ -801,7 +863,9 @@ function throttle(fn, delay = 100) {
 web常见的攻击方式有哪些？如何防御？
 
 <AnswerBlock>
+
 **常见攻击方式**：  
+
 1. **XSS（跨站脚本攻击）**：  
    - 存储型、反射型、DOM型  
    - 防御：转义用户输入，使用`textContent`替代`innerHTML`  
@@ -836,7 +900,9 @@ web常见的攻击方式有哪些？如何防御？
 什么是内存泄漏和垃圾回收？JavaScript中会在什么情况出现内存泄漏？
 
 <AnswerBlock>
+
 **内存泄漏**：  
+
 - 不再使用的内存未被释放  
 
 **垃圾回收（GC）**：  
@@ -859,11 +925,15 @@ web常见的攻击方式有哪些？如何防御？
 Javascript如何实现继承？
 
 <AnswerBlock>
+
 **继承方式**：  
+
 1. **原型链继承**：  
+
    ```javascript
    Child.prototype = new Parent();
    ```
+
    - 缺点：共享原型属性，无法传参  
 
 2. **构造函数继承**：  
@@ -917,7 +987,9 @@ Javascript如何实现继承？
 说说Javascript数字精度丢失的问题，如何解决？
 
 <AnswerBlock>
+
 **精度丢失原因**：  
+
 - JavaScript使用IEEE754双精度浮点数，最多精确到53位二进制  
 - 小数转二进制可能无限循环，导致精度损失  
 
@@ -957,7 +1029,9 @@ Javascript如何实现继承？
 什么是递归和尾递归？有哪些应用场景？
 
 <AnswerBlock>
+
 **递归**：  
+
 - 函数调用自身  
 
 **尾递归**：  

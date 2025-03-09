@@ -28,9 +28,7 @@ const activeKey = ref<string | number | undefined>(undefined);
       key="1"
       header="答案"
     >
-      <span>
-        <slot></slot>
-      </span>
+      <slot></slot>
     </ACollapsePanel>
   </ACollapse>
 </template>
