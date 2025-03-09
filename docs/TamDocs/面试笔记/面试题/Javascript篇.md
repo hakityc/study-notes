@@ -1,13 +1,10 @@
-
 # JavaScript面试题
 
 <script setup lang="ts">
     import AnswerBlock from '@/components/common/answer-block.vue'
 </script>
 
-## 问题1
-
-JavaScript基本类型和引用类型有哪些，存储上有什么区别？
+## JavaScript基本类型和引用类型有哪些，存储上有什么区别？
 
 <AnswerBlock >
 
@@ -21,18 +18,16 @@ JavaScript基本类型和引用类型有哪些，存储上有什么区别？
 - 基本类型值不可变，引用类型值可变
 </AnswerBlock>
 
-## 问题2
-
-说说你了解的js数据结构？
+## 说说你了解的js数据结构？
 
 <AnswerBlock>
 
 常见数据结构：  
 
 1. **数组**：连续内存空间存储数据  
-2. **栈**：LIFO（后进先出），常用push/pop操作  
-3. **队列**：FIFO（先进先出），常用enqueue/dequeue操作  
-4. **链表**：非连续内存存储，适合频繁插入/删除  
+2. **链表**：非连续内存存储，适合频繁插入/删除  
+3. **栈**：LIFO（后进先出），常用push/pop操作  
+4. **队列**：FIFO（先进先出），常用enqueue/dequeue操作  
 5. **字典**：键值对存储，类似对象  
 6. **散列表**：基于哈希函数实现快速查找  
 7. **树**：层级结构，如二叉树、红黑树  
@@ -40,9 +35,7 @@ JavaScript基本类型和引用类型有哪些，存储上有什么区别？
 9. **堆**：特殊的树结构，用于优先队列
 </AnswerBlock>
 
-## 问题3
-
-DOM常见的操作有哪些？
+## DOM常见的操作有哪些？
 
 <AnswerBlock>
 
@@ -58,9 +51,7 @@ DOM常见的操作有哪些？
 8. **事件绑定**：addEventListener、onclick  
 </AnswerBlock>
 
-## 问题4
-
-说说你对BOM的理解，常见的BOM对象你了解哪些？
+## 说说你对BOM的理解，常见的BOM对象你了解哪些？
 
 <AnswerBlock>
 
@@ -77,9 +68,7 @@ DOM常见的操作有哪些？
   - **setTimeout/setInterval**：定时器  
 </AnswerBlock>
 
-## 问题5
-
-==和===区别，分别在什么情况使用？
+## ==和===区别，分别在什么情况使用？
 
 <AnswerBlock>
 
@@ -97,9 +86,7 @@ DOM常见的操作有哪些？
   - 特定业务逻辑需要类型转换时
 </AnswerBlock>
 
-## 问题6
-
-typeof与instanceof区别？
+## typeof与instanceof区别？
 
 <AnswerBlock>
 
@@ -126,9 +113,7 @@ typeof function(){} // "function"
 - 精确判断可用`Object.prototype.toString.call()`
 </AnswerBlock>
 
-## 问题7
-
-JavaScript原型与原型链的特点是什么？
+## JavaScript原型与原型链的特点是什么？
 
 <AnswerBlock>
 
@@ -146,9 +131,7 @@ JavaScript原型与原型链的特点是什么？
 - 修改原型对象会影响所有实例
 </AnswerBlock>
 
-## 问题8
-
-说说你对作用域链的理解？
+## 说说你对作用域链的理解？
 
 <AnswerBlock>
 
@@ -168,9 +151,7 @@ JavaScript原型与原型链的特点是什么？
 - 闭包会保持作用域链不被释放
 </AnswerBlock>
 
-## 问题9
-
-谈谈this对象的理解？
+## 谈谈this对象的理解？
 
 <AnswerBlock>
 
@@ -191,9 +172,7 @@ JavaScript原型与原型链的特点是什么？
 - 闭包中的this取决于定义时的作用域
 </AnswerBlock>
 
-## 问题10
-
-说说new操作符具体干了什么？流程是怎样的？如何手写？
+## 说说new操作符具体干了什么？流程是怎样的？如何手写？
 
 <AnswerBlock>
 
@@ -216,9 +195,7 @@ function myNew(constructor, ...args) {
 
 </AnswerBlock>
 
-## 问题11
-
-bind、call、apply区别？如何实现一个bind？
+## bind、call、apply区别？如何实现一个bind？
 
 <AnswerBlock>
 
@@ -241,9 +218,7 @@ Function.prototype.myBind = function(context, ...args) {
 
 </AnswerBlock>
 
-## 问题12
-
-JavaScript中执行上下文和执行栈是什么？
+## JavaScript中执行上下文和执行栈是什么？
 
 <AnswerBlock>
 
@@ -267,9 +242,7 @@ JavaScript中执行上下文和执行栈是什么？
 - 每次函数调用压入新上下文，执行完毕弹出  
 </AnswerBlock>
 
-## 问题13
-
-说说JavaScript中的事件模型？
+## 说说JavaScript中的事件模型？
 
 <AnswerBlock>
 
@@ -292,9 +265,7 @@ JavaScript中执行上下文和执行栈是什么？
 - 注意事件冒泡层级和性能
 </AnswerBlock>
 
-## 问题14
-
-事件代理是什么？有哪些应用场景？
+## 事件代理是什么？有哪些应用场景？
 
 <AnswerBlock>
 
@@ -315,9 +286,7 @@ JavaScript中执行上下文和执行栈是什么？
 - 缺点：可能影响事件响应速度，需注意事件类型（如`focus`不冒泡）
 </AnswerBlock>
 
-## 问题15
-
-说说你对闭包的理解？闭包使用场景有哪些？
+## 说说你对闭包的理解？闭包使用场景有哪些？
 
 <AnswerBlock>
 
@@ -345,9 +314,7 @@ JavaScript中执行上下文和执行栈是什么？
 - 箭头函数不会创建新的闭包作用域
 </AnswerBlock>
 
-## 问题16
-
-概述JavaScript类型转换机制？
+## 概述JavaScript类型转换机制？
 
 <AnswerBlock>
 
@@ -371,9 +338,7 @@ JavaScript中执行上下文和执行栈是什么？
 - 对象转换会先调用`valueOf()`，再调用`toString()`
 </AnswerBlock>
 
-## 问题17
-
-深拷贝浅拷贝的区别？如何实现一个深拷贝？
+## 深拷贝浅拷贝的区别？如何实现一个深拷贝？
 
 <AnswerBlock>
 
@@ -404,9 +369,7 @@ JavaScript中执行上下文和执行栈是什么？
 4. **结构化克隆**：`structuredClone()`（现代浏览器支持）
 </AnswerBlock>
 
-## 问题18
-
-Javascript中如何实现函数缓存？函数缓存有哪些应用场景？
+## Javascript中如何实现函数缓存？函数缓存有哪些应用场景？
 
 <AnswerBlock>
 
@@ -439,9 +402,7 @@ Javascript中如何实现函数缓存？函数缓存有哪些应用场景？
 5. 表单验证规则缓存
 </AnswerBlock>
 
-## 问题19
-
-JavaScript字符串的常用方法有哪些？
+## JavaScript字符串的常用方法有哪些？
 
 <AnswerBlock>
 
@@ -469,9 +430,7 @@ JavaScript字符串的常用方法有哪些？
    - `replace()`：替换匹配内容  
 </AnswerBlock>
 
-## 问题20
-
-数组的常用方法有哪些？
+## 数组的常用方法有哪些？
 
 <AnswerBlock>
 
@@ -505,9 +464,7 @@ JavaScript字符串的常用方法有哪些？
    - `join()`：数组转字符串  
 </AnswerBlock>
 
-## 问题21
-
-说说你对事件循环的理解？
+## 说说你对事件循环的理解？
 
 <AnswerBlock>
 
@@ -534,9 +491,7 @@ JavaScript字符串的常用方法有哪些？
 - 微任务在`await`后立即执行  
 </AnswerBlock>
 
-## 问题22
-
-JavaScript本地存储有哪些方式？它们有什么区别和应用场景？
+## JavaScript本地存储有哪些方式？它们有什么区别和应用场景？
 
 <AnswerBlock>
 
@@ -558,9 +513,7 @@ JavaScript本地存储有哪些方式？它们有什么区别和应用场景？
 - indexedDB：大量数据存储（如离线应用）
 </AnswerBlock>
 
-## 问题23
-
-大文件上传如何做断点续传？
+## 大文件上传如何做断点续传？
 
 <AnswerBlock>
 
@@ -587,9 +540,7 @@ JavaScript本地存储有哪些方式？它们有什么区别和应用场景？
 - 秒传（检查哈希值是否已存在）
 </AnswerBlock>
 
-## 问题24
-
-ajax原理是什么？如何实现？
+## ajax原理是什么？如何实现？
 
 <AnswerBlock>
 
@@ -631,9 +582,7 @@ function ajax(url, options = {}) {
 
 </AnswerBlock>
 
-## 问题25
-
-什么是防抖和节流？有什么区别？如何实现？
+## 什么是防抖和节流？有什么区别？如何实现？
 
 <AnswerBlock>
 
@@ -678,9 +627,7 @@ function throttle(fn, delay = 100) {
 
 </AnswerBlock>
 
-## 问题26
-
-如何判断一个元素是否在可视区域？实现方式有哪些？用途和应用场景是什么？
+## 如何判断一个元素是否在可视区域？实现方式有哪些？用途和应用场景是什么？
 
 <AnswerBlock>
 
@@ -722,9 +669,7 @@ function throttle(fn, delay = 100) {
 5. 预加载优化
 </AnswerBlock>
 
-## 问题27
-
-什么是单点登录？如何实现？
+## 什么是单点登录？如何实现？
 
 <AnswerBlock>
 
@@ -755,9 +700,7 @@ function throttle(fn, delay = 100) {
 - 跨域通信（CORS、postMessage）  
 </AnswerBlock>
 
-## 问题28
-
-如何实现上拉加载，下拉刷新？
+## 如何实现上拉加载，下拉刷新？
 
 <AnswerBlock>
 
@@ -790,9 +733,7 @@ function throttle(fn, delay = 100) {
 - `PullToRefresh.js`  
 </AnswerBlock>
 
-## 问题29
-
-正则表达式是什么？有哪些匹配规则和常用方法？应用场景有哪些？
+## 正则表达式是什么？有哪些匹配规则和常用方法？应用场景有哪些？
 
 <AnswerBlock>
 
@@ -825,9 +766,7 @@ function throttle(fn, delay = 100) {
 5. 搜索替换  
 </AnswerBlock>
 
-## 问题30
-
-说说你对函数式编程的理解？优缺点有哪些？
+## 说说你对函数式编程的理解？优缺点有哪些？
 
 <AnswerBlock>
 
@@ -858,9 +797,7 @@ function throttle(fn, delay = 100) {
 - 部分场景代码可读性下降  
 </AnswerBlock>
 
-## 问题31
-
-web常见的攻击方式有哪些？如何防御？
+## web常见的攻击方式有哪些？如何防御？
 
 <AnswerBlock>
 
@@ -895,9 +832,7 @@ web常见的攻击方式有哪些？如何防御？
 - 定期安全审计  
 </AnswerBlock>
 
-## 问题32
-
-什么是内存泄漏和垃圾回收？JavaScript中会在什么情况出现内存泄漏？
+## 什么是内存泄漏和垃圾回收？JavaScript中会在什么情况出现内存泄漏？
 
 <AnswerBlock>
 
@@ -920,9 +855,7 @@ web常见的攻击方式有哪些？如何防御？
 6. **循环引用**：对象间相互引用  
 </AnswerBlock>
 
-## 问题33
-
-Javascript如何实现继承？
+## Javascript如何实现继承？
 
 <AnswerBlock>
 
@@ -982,9 +915,7 @@ Javascript如何实现继承？
 
 </AnswerBlock>
 
-## 问题34
-
-说说Javascript数字精度丢失的问题，如何解决？
+## 说说Javascript数字精度丢失的问题，如何解决？
 
 <AnswerBlock>
 
@@ -1024,9 +955,7 @@ Javascript如何实现继承？
    - `binary.js`  
 </AnswerBlock>
 
-## 问题35
-
-什么是递归和尾递归？有哪些应用场景？
+## 什么是递归和尾递归？有哪些应用场景？
 
 <AnswerBlock>
 

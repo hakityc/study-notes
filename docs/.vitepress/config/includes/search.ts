@@ -1,8 +1,8 @@
 export const search: {
-  provider: "algolia";
+  provider: "local";
   options: any;
 } = {
-  provider: "algolia",
+  provider: "local",
   options: {
     appId: "...",
     apiKey: "...",
