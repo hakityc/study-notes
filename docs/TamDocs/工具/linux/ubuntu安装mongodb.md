@@ -132,7 +132,7 @@ mongosh
 
 ### 2. 连接到admin数据库
 
-```mongodb
+```bash
 use admin
 ```
 
@@ -140,7 +140,7 @@ use admin
 
 在admin数据库中创建一个名为root的用户，并赋予管理员权限。以下是创建用户的命令：
 
-```mongodb
+```bash
 db.createUser({
   user: "root",
   pwd: "yourStrongPasswordHere",
@@ -164,12 +164,12 @@ db.createUser({
 
 您可以列出admin数据库中的所有用户来验证root用户是否已成功创建：
 
-```mongodb
+```bash
 db.getUsers()
 ```
 
 ### 5. 退出MongoDB Shell
 
-```mongodb
+```bash
 exit
 ```
