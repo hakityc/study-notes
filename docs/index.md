@@ -25,7 +25,7 @@ features:
   - icon: 🎯
     title: 持续学习
     details: 记录技术探索过程，分享学习心得，打造个人知识库。
-    link: /TamDocs/学习/
+    link: /TamDocs/学习笔记/
   - icon: 💡
     title: 踩坑记录
     details: 总结业务开发中遇到的各类问题和解决方案，避免重复踩坑。
