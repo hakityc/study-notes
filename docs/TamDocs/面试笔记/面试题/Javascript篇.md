@@ -38,31 +38,49 @@
 ## DOM常见的操作有哪些？
 
 <AnswerBlock>
+<template #tip>
+
+**创建**、**增删改查**、属性、样式、事件
+</template>
 
 **DOM操作分类**：  
 
 1. **创建节点**：createElement、createTextNode、createDocumentFragment  
-2. **获取节点**：getElementById、querySelector、getElementsByClassName  
-3. **更新节点**：innerHTML、textContent、setAttribute  
-4. **添加节点**：appendChild、insertBefore  
-5. **删除节点**：removeChild  
+2. **添加节点**：appendChild、insertBefore  
+3. **删除节点**：removeChild
+4. **更新节点**：textContent、innerText、innerHTML、setAttribute  
+5. **获取节点**：getElementById、querySelector、getElementsByClassName
 6. **属性操作**：getAttribute、hasAttribute  
 7. **样式操作**：style属性、classList  
 8. **事件绑定**：addEventListener、onclick  
+
+<template #expansion>
+
+1. textContent、innerText 和 innerHTML 区别
+   - textContent：只返回文本，包含 `<script>` 和 `<style>` 内容，不解析标签，性能好且安全，不考虑样式
+   - innerText：只返回可见文本，忽略 `<script>` 和 `<style>` 内容，不解析标签，性能稍差，考虑样式
+   - innerHTML：返回含标签的完整 HTML 内容，解析标签，性能差，直接使用用户输入有 XSS 风险
+
+</template>
 </AnswerBlock>
 
 ## 说说你对BOM的理解，常见的BOM对象你了解哪些？
 
 <AnswerBlock>
+<template #tip>
+
+路由、浏览器信息、宽高、DOM树、打印、定时器
+
+</template>
 
 **BOM（浏览器对象模型）**：  
 
 - 用于与浏览器窗口交互的API  
 - 顶级对象是`window`，包含以下常用对象：  
   - **location**：获取/操作URL（href、search、hash）  
+  - **history**：操作浏览历史（back、forward、go）  
   - **navigator**：获取浏览器信息（userAgent、language）  
   - **screen**：获取屏幕信息（width、height）  
-  - **history**：操作浏览历史（back、forward、go）  
   - **document**：DOM树的入口  
   - **console**：控制台输出  
   - **setTimeout/setInterval**：定时器  
@@ -71,6 +89,11 @@
 ## ==和===区别，分别在什么情况使用？
 
 <AnswerBlock>
+<template #tip>
+
+类型转换
+
+</template>
 
 **区别**：  
 

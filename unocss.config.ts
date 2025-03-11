@@ -1,9 +1,11 @@
-import { defineConfig, presetAttributify, presetUno, presetIcons } from "unocss";
+import { defineConfig, presetAttributify, presetUno, presetMini } from "unocss";
+import presetIcons from '@unocss/preset-icons';
 
 export default defineConfig({
   presets: [
     presetUno(),
-    presetIcons({ scale: 1.2, warn: true }),
+    presetIcons({ scale: 1.2, warn: true, prefix: "h-" }),
+    presetMini()
   ],
   shortcuts: [
     ["wh-full", "w-full h-full"],
@@ -13,6 +15,8 @@ export default defineConfig({
     colors: {
       primary: "var(--primary-color)",
       dark_bg: "var(--dark-bg)",
+      dark: "var(--dark)",
+      light: "var(--light)",
     },
     breakpoints: {
       sm: "768px", // 如平板竖屏
