@@ -28,37 +28,50 @@ LRU（最近最少使用）缓存是一种常见的缓存管理策略，能够�
 
 ## 代码实现
 
-### 1. LRU 缓存工具类
+### 1. LRU 缓存工具hook
 
-我们首先定义一个简单的 LRUCache 类来存储翻译结果。
+首先实现LRU 缓存工具hook。
 
 ```typescript
-class LRUCache {
-  private cache: Map<string, string>;
-  private maxSize: number;
+export const useLRUCache = () => {
+    const maxSize = 100;
+    const cache = shallowRef(new Map<string, string>());
 
-  constructor(maxSize: number = 1000) {
-    this.cache = new Map();
-    this.maxSize = maxSize;
-  }
+    // 添加或更新缓存，并在超过容量时移除最久未使用的项
+    const setCache = (key: string, value: string) => {
+        // 如果 key 已存在，先删除以便后续重新插入，保证最新顺序
+        if (cache.value.has(key)) {
+            cache.value.delete(key);
+        }
+        cache.value.set(key, value);
+        // 当缓存大小超过限制，删除最早插入的那个键（即最久未使用的）
+        if (cache.value.size > maxSize) {
+            const firstKey = cache.value.keys().next().value || '';
+            cache.value.delete(firstKey);
+        }
+    };
 
-  get(key: string): string | undefined {
-    if (!this.cache.has(key)) return undefined;
-    const value = this.cache.get(key)!;
-    this.cache.delete(key);
-    this.cache.set(key, value);
-    return value;
-  }
+    // 获取缓存数据，同时更新其使用顺序
+    const getCache = (key: string) => {
+        if (!cache.value.has(key)) return null;
+        const value = cache.value.get(key) || '';
+        // 删除后重新插入，使其成为最新使用的项
+        cache.value.delete(key);
+        cache.value.set(key, value);
+        return value;
+    };
 
-  set(key: string, value: string): void {
-    if (this.cache.has(key)) {
-      this.cache.delete(key);
-    } else if (this.cache.size >= this.maxSize) {
-      this.cache.delete(this.cache.keys().next().value);
-    }
-    this.cache.set(key, value);
-  }
-}
+    const clearCache = () => {
+        cache.value.clear();
+    };
+
+    return {
+        cache,
+        setCache,
+        getCache,
+        clearCache,
+    };
+};
 ```
 
 ### 2. 在 Vue 组件中使用 LRU 缓存
