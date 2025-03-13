@@ -201,10 +201,11 @@ typeof function(){} // "function"
 
 **new操作符流程**：  
 
-1. 创建空对象`obj`  
-2. 设置`obj.__proto__ = 构造函数.prototype`  
-3. 执行构造函数，绑定this为obj  
-4. 返回obj（若构造函数返回对象则使用该对象）  
+1. 创建一个新对象，并继承构造函数的原型
+2. 绑定 this 并执行构造函数  
+3. 返回对象：
+   - 如果构造函数返回的是一个对象，则返回该对象；
+   - 否则，返回 this（即刚创建的新对象）。
 
 **手写实现**：  
 
@@ -224,9 +225,11 @@ function myNew(constructor, ...args) {
 
 **区别**：  
 
-- `call`：立即执行，参数列表传递  
-- `apply`：立即执行，数组形式传参  
-- `bind`：返回新函数，可延迟执行  
+| 方法   | 是否立即执行 | this 指向       | 参数传递方式   | 额外功能                 |
+|--------|--------------|----------------|----------------|--------------------------|
+| call   | ✅ 立即执行  | 指定对象       | 依次传递        | 无                       |
+| apply  | ✅ 立即执行  | 指定对象       | 数组传递        | 无                       |
+| bind   | ❌ 返回新函数 | 指定对象（永久绑定） | 依次传递        | 可预设参数，返回新函数   |
 
 **手写bind**：  
 
@@ -286,6 +289,14 @@ Function.prototype.myBind = function(context, ...args) {
 - 利用事件冒泡减少事件绑定数量  
 - 适合动态元素事件处理  
 - 注意事件冒泡层级和性能
+
+<template #tip>
+
+- 事件流：捕获 → 目标 → 冒泡
+- 事件模型：DOM0 → DOM2 → IE（废弃）
+- 事件委托：冒泡 → 减少绑定 → 动态元素
+</template>
+
 </AnswerBlock>
 
 ## 事件代理是什么？有哪些应用场景？
@@ -329,6 +340,7 @@ Function.prototype.myBind = function(context, ...args) {
 3. 缓存计算结果（记忆函数）  
 4. 事件处理函数保持状态  
 5. 迭代器实现  
+6. react hook实现
 
 **注意**：  
 
@@ -352,13 +364,21 @@ Function.prototype.myBind = function(context, ...args) {
 2. **隐式转换**：  
    - 算术运算（`+`、`-`等）  
    - 比较运算（`==`、`>`等）  
-   - 逻辑判断（`if`、`&&`等）  
+   - 逻辑判断（`if`、`&&`、`!`等）  
 
 **转换规则**：  
 
 - 字符串拼接使用`+`会触发转换  
 - 布尔转换中`0`、`null`、`undefined`、`NaN`、`''`为`false`  
-- 对象转换会先调用`valueOf()`，再调用`toString()`
+
+<template #expansion>
+
+**对象转换成原始值**时会先调用`valueOf()`，若不满足则再调用`toString()`
+</template>
+<template #tip>
+
+显示转换，隐式转换
+</template>
 </AnswerBlock>
 
 ## 深拷贝浅拷贝的区别？如何实现一个深拷贝？
@@ -380,6 +400,7 @@ Function.prototype.myBind = function(context, ...args) {
      if (typeof obj !== 'object' || obj === null) return obj;
      const clone = Array.isArray(obj) ? [] : {};
      for (const key in obj) {
+      // 排除原型属性
        if (obj.hasOwnProperty(key)) {
          clone[key] = deepClone(obj[key]);
        }
@@ -396,9 +417,7 @@ Function.prototype.myBind = function(context, ...args) {
 
 <AnswerBlock>
 
-**实现方法**：  
-
-1. **闭包缓存**：  
+实现方法：**闭包缓存加Map**：  
 
    ```javascript
    function memoize(fn) {
@@ -413,9 +432,6 @@ Function.prototype.myBind = function(context, ...args) {
    }
    ```
 
-2. **装饰器模式**  
-3. **WeakMap优化**（避免内存泄漏）  
-
 **应用场景**：  
 
 1. 高频调用的计算密集型函数  
@@ -423,6 +439,15 @@ Function.prototype.myBind = function(context, ...args) {
 3. 组件状态缓存  
 4. 接口请求防抖  
 5. 表单验证规则缓存
+
+<template #expansion>
+
+方法优化
+
+   1. **装饰器模式**  
+   2. **WeakMap优化**（避免内存泄漏）
+</template>
+
 </AnswerBlock>
 
 ## JavaScript字符串的常用方法有哪些？
@@ -435,7 +460,7 @@ Function.prototype.myBind = function(context, ...args) {
    - `concat()`：拼接字符串  
    - `slice()`/`substring()`/`substr()`：截取子串  
    - `trim()`/`trimStart()`/`trimEnd()`：去除空白  
-   - `repeat()`：重复字符串  
+   - `repeat()`：重复并拼接字符串  
    - `padStart()`/`padEnd()`：填充字符串  
 
 2. **转换方法**：  
@@ -451,6 +476,10 @@ Function.prototype.myBind = function(context, ...args) {
    - `match()`/`matchAll()`：匹配正则  
    - `search()`：查找匹配位置  
    - `replace()`：替换匹配内容  
+
+<template #tip>
+修改、转换、查找、正则
+</template>
 </AnswerBlock>
 
 ## 数组的常用方法有哪些？
