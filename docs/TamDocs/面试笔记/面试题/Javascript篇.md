@@ -297,6 +297,22 @@ Function.prototype.myBind = function(context, ...args) {
 - 事件委托：冒泡 → 减少绑定 → 动态元素
 </template>
 
+<template #expansion>
+
+Observable Api（提案中），用来替代addEventListener的api。
+
+```typescript
+//用法参考
+const button = document.getElementById("myButton");
+button.when("click")
+  .filter((e, index) => index % 2 === 0) // 只处理偶数次点击
+  .subscribe({
+    next: (e) => console.log("Button clicked"),
+  });
+```
+
+</template>
+
 </AnswerBlock>
 
 ## 事件代理是什么？有哪些应用场景？
