@@ -871,6 +871,14 @@ function throttle(fn, delay = 100) {
 - 学习曲线陡峭  
 - 递归可能导致性能问题  
 - 部分场景代码可读性下降  
+
+<template #tip>
+
+1. 副作用可控
+2. 代码复用性高
+3. 代码可读性下降
+
+</template>
 </AnswerBlock>
 
 ## web常见的攻击方式有哪些？如何防御？
