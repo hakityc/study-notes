@@ -534,6 +534,14 @@ Function.prototype.myBind = function(context, ...args) {
 - localStorage：长期保存配置、用户数据  
 - sessionStorage：临时保存会话数据  
 - indexedDB：大量数据存储（如离线应用）
+
+<template #expansion>
+
+- localStorage 与 sessionStorage：严格遵循同源策略，协议、域名、端口任一不同都无法共享数据。
+- IndexedDB：严格遵循同源策略，不同源页面无法直接访问数据库，但可通过高级跨源通信机制实现数据交互。
+- Cookies：相对灵活，可通过设置 domain 属性让子域名共享数据，还能通过 SameSite 属性控制跨站请求时的发送行为。
+</template>
+
 </AnswerBlock>
 
 ## 大文件上传如何做断点续传？
