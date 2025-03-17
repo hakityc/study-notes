@@ -664,16 +664,35 @@
    - 使用文档片段（`DocumentFragment`）批量操作  
    - 离线修改样式后再更新  
 
-2. **避免强制同步布局**  
+2. **避免强制同步布局**  【修改样式后立即读取布局属性（如 offsetWidth、offsetHeight、getComputedStyle 等），浏览器为了返回准确的布局信息，会强制触发一次同步回流】
 
    ```javascript
    // 错误写法（触发两次回流）
-   el.style.height = '100px';
-   console.log(el.offsetHeight);
    
-   // 正确写法（合并读写）
+   // 第一次修改样式并读取布局信息
    el.style.height = '100px';
-   // 其他操作...
+   const height1 = el.offsetHeight;
+   console.log(`第一次读取的元素高度是: ${height1}px`);
+
+   // 第二次修改样式并读取布局信息
+   el.style.width = '200px';
+   const width1 = el.offsetWidth;
+   console.log(`第一次读取的元素宽度是: ${width1}px`);
+   
+   ```  
+
+   ```javascript
+   // 正确写法（合并读写）
+
+   // 修改样式
+   el.style.height = '100px';
+   el.style.width = '200px';
+
+   // 读取布局信息
+   const height = el.offsetHeight;
+   const width = el.offsetWidth;
+   console.log(`元素的高度是: ${height}px，宽度是: ${width}px`);
+
    ```  
 
 3. **使用 CSS 优化**  
@@ -689,6 +708,7 @@
    }
    ```  
 
+5. 使用requestAnimationFrame，减少重绘次数
 </AnswerBlock>
 
 ## CSS预处理器有哪些？区别是什么？
