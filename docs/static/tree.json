@@ -641,6 +641,13 @@
           "icon": "https://magicui.design/favicon.ico",
           "desc": "UI library for Design Engineers",
           "link": "https://magicui.design/"
+        },
+        {
+          "title":"Inspira UI",
+          "code":"inspira-ui",
+          "icon":"https://inspira-ui.com/favicon.ico",
+          "desc":"A design system for building beautiful, responsive, and accessible React applications.",
+          "link":"https://inspira-ui.com/"
         }
       ]
     },
