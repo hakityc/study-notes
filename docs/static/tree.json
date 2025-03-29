@@ -646,7 +646,7 @@
           "title":"Inspira UI",
           "code":"inspira-ui",
           "icon":"https://inspira-ui.com/favicon.ico",
-          "desc":"A design system for building beautiful, responsive, and accessible React applications.",
+          "desc":"Open source components to build beautiful  websites using Vue & Nuxt.",
           "link":"https://inspira-ui.com/"
         }
       ]
